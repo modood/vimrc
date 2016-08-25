@@ -40,6 +40,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,3 +49,9 @@ filetype plugin indent on    " required
 "filetype plugin on
 
 " Put your non-Plugin stuff after this line
+
+" Configuration: nerdtree
+" How can I open a NERDTree automatically when vim starts up?
+autocmd vimenter * NERDTree
+" How can I map a specific key or shortcut to open NERDTree?
+map <C-n> :NERDTreeToggle<CR>
