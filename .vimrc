@@ -14,6 +14,10 @@ set nowrap
 set et
 set sw=2
 set ts=2
+set nobackup
+
+set statusline=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}
+set laststatus=2
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
