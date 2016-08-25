@@ -1,5 +1,19 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+syntax on                     " syntax highlighing
+
+" basic configuration
+" about: http://edyfox.codecarver.org/html/_vimrc_for_beginners.html
+set nocp
+set ru
+set nu
+set hls
+set whichwrap=h,l
+set encoding=utf-8
+set nowrap
+set et
+set sw=2
+set ts=2
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,9 +34,3 @@ filetype plugin indent on    " required
 "filetype plugin on
 
 " Put your non-Plugin stuff after this line
-
-" Configuration: vim-javascript
-" Enables syntax highlighting for JSDocs.
-let g:javascript_plugin_jsdoc = 1 " Default Value: 0
-" Enables code folding based on our syntax file.
-set foldmethod=syntax
