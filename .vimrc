@@ -2,8 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on                     " syntax highlighing
 
-" basic configuration
-" about: http://edyfox.codecarver.org/html/_vimrc_for_beginners.html
+" Basic configuration
 set nocp
 set ru
 set nu
@@ -14,10 +13,21 @@ set nowrap
 set et
 set sw=2
 set ts=2
-set nobackup
 
+" Turn backup off
+set nobackup
+set nowb
+set noswapfile
+
+" Statusline
 set statusline=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}
 set laststatus=2
+
+" Smart way to move
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
