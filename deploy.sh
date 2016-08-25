@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vundle=~/.vim/bundle/Vundle.vim
+
+if [ ! -d "$vundle" ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git "$vundle"
+fi
+
 cp .vimrc ~/
 vim +PluginInstall +qall
