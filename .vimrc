@@ -54,6 +54,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'msanders/snipmate.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Shougo/neocomplcache.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,3 +82,11 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|node_modules|logs)$',
   \ 'file': '\v\.(log|swp|zip|png|jpg|ico)$',
   \ }
+
+" Configuration: neocomplcache.vim
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
