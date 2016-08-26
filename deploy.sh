@@ -8,3 +8,5 @@ fi
 
 cp .vimrc ~/
 vim +PluginInstall +qall
+
+cp -rf snippets/* ~/.vim/bundle/snipmate.vim/snippets

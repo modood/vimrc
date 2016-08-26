@@ -1,0 +1,15 @@
+# Global snippets
+
+# (c) holds no legal value ;)
+snippet c)
+	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
+
+# Comment
+snippet /*
+	/**
+	 * ${1:description}
+	 * @Author   ${2:https://github.com/modood}
+	 * @DateTime ${3:`strftime("%Y-%m-%d %H:%M")`}
+	 * @param    ${4:[type]} ${5}
+	 * @return   ${6:[type]}
+	 */${7}

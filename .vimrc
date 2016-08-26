@@ -49,6 +49,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'msanders/snipmate.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
