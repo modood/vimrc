@@ -1,27 +1,30 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on                     " syntax highlighing
 
 " Basic configuration
-set nocp
-set ru
-set nu
-set hls
-set whichwrap=h,l
-set encoding=utf-8
-set nowrap
-set et
-set sw=2
-set ts=2
+set nocp                      " nocompatible
+set ru                        " ruler
+set nu                        " number
+set hls                       " hlsearch
+set ww=h,l                    " whichwrap
+set enc=utf-8                 " encoding
+set nowrap                    " nowrap
+
+set et                        " expandtab
+set sw=2                      " shiftwidth
+set ts=2                      " tabstop
+
+"set cul                      " cursorline
+"set cuc                      " cursorcolumn
 
 " Turn backup off
-set nobackup
-set nowb
-set noswapfile
+set nobk                      " nobackup
+set nowb                      " nowritebackup
+set noswf                     " noswapfile
 
 " Statusline
-set statusline=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}
-set laststatus=2
+set ls=2                      " laststatus
+set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statusline
 
 " Smart way to move
 map <C-j> <C-W>j
@@ -30,12 +33,12 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Automatic double quotes,parenthesis etc
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
+"inoremap ( ()<ESC>i
+"inoremap [ []<ESC>i
+"inoremap { {}<ESC>i
+"inoremap < <><ESC>i
+"inoremap " ""<ESC>i
+"inoremap ' ''<ESC>i
 
 " Filetype
 autocmd BufRead,BufNewFile *.vue set filetype=html
@@ -53,6 +56,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Shougo/neocomplcache.vim'
 
@@ -90,3 +94,22 @@ let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
+
+" Configuration: syntastic
+" show list of errors and warnings on the current file
+nmap <leader>e :Errors<CR>
+" turn to next or previous errors, after open errors list
+nmap <leader>n :lnext<CR>
+nmap <leader>p :lprevious<CR>
+" check also when just opened the file
+let g:syntastic_check_on_open = 1
+" syntastic checker for javascript
+let g:syntastic_javascript_checkers = ['eslint']
+" don't put icons on the sign column (it hides the vcs status icons of signify)
+let g:syntastic_enable_signs = 0
+" custom icons (enable them if you use a patched font, and enable the previous setting)
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+
