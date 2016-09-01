@@ -14,6 +14,7 @@ set et                        " expandtab
 set sw=2                      " shiftwidth
 set ts=2                      " tabstop
 
+" Cursor
 "set cul                      " cursorline
 "set cuc                      " cursorcolumn
 
@@ -32,13 +33,16 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Paste toggle - when pasting something in, don't indent.
+set pastetoggle=<F3>
+
 " Automatic double quotes,parenthesis etc
-"inoremap ( ()<ESC>i
-"inoremap [ []<ESC>i
-"inoremap { {}<ESC>i
-"inoremap < <><ESC>i
-"inoremap " ""<ESC>i
-"inoremap ' ''<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
 
 " Filetype
 autocmd BufRead,BufNewFile *.vue set filetype=html
