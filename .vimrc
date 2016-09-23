@@ -46,6 +46,8 @@ inoremap ' ''<ESC>i
 
 " Filetype
 autocmd BufRead,BufNewFile *.vue set filetype=xhtml
+autocmd BufRead,BufNewFile *.wxml set filetype=xhtml
+autocmd BufRead,BufNewFile *.wxss set filetype=css
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -65,6 +67,7 @@ Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file, buffer, mru, tag, etc fi
 Plugin 'Shougo/neocomplcache.vim'         " Ultimate auto-completion system for Vim.
 Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
 Plugin 'editorconfig/editorconfig-vim'    " EditorConfig plugin for Vim.
+Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
