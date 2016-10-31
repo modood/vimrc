@@ -115,7 +115,7 @@ nmap <leader>p :lprevious<CR>
 " check also when just opened the file
 let g:syntastic_check_on_open = 0
 " syntastic checker for javascript
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['standard']
 " don't put icons on the sign column (it hides the vcs status icons of signify)
 let g:syntastic_enable_signs = 1
 " custom icons (enable them if you use a patched font, and enable the previous setting)

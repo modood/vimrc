@@ -18,6 +18,6 @@ vim +PluginInstall +qall
 cp -rf snippets/* ~/.vim/bundle/snipmate.vim/snippets
 
 # install npm dependencies
-command -v eslint >/dev/null 2>&1 || sudo npm install -g eslint
+command -v standard >/dev/null 2>&1 || sudo npm install -g standard
 command -v instant-markdown-d >/dev/null 2>&1 || sudo npm install -g instant-markdown-d
 
