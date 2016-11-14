@@ -33,6 +33,12 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Use tab to indent
+nmap <tab> V>
+nmap <s-tab> V<
+vmap <tab> >gv
+vmap <s-tab> <gv
+
 " Paste toggle - when pasting something in, don't indent.
 set pastetoggle=<F3>
 
