@@ -50,6 +50,11 @@ autocmd BufRead,BufNewFile *.wxml set filetype=xhtml
 autocmd BufRead,BufNewFile *.wxss set filetype=css
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Leader
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
