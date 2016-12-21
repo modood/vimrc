@@ -1,5 +1,5 @@
-filetype off                  " required
 syntax on                     " syntax highlighing
+filetype plugin indent on     " required
 
 " Basic configuration
 set nocp                      " nocompatible
@@ -61,16 +61,18 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" =========================================================
+call plug#begin('~/.vim/bundle')          " Specify a directory for plugins: begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'fatih/vim-go'                       " Go development plugin for Vim
 
-" Keep Plugin commands between vundle#begin/end.
+call plug#end()                           " All of your Plugs must be added before this line
+
+" =========================================================
+set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
+call vundle#begin('~/.vim/bundle')        " Specify a directory for plugins: begin('~/some/path/here')
+
+Plugin 'VundleVim/Vundle.vim'             " let Vundle manage Vundle, required
 Plugin 'pangloss/vim-javascript'          " Vastly improved Javascript indentation and syntax support in Vim.
 Plugin 'scrooloose/nerdtree'              " A tree explorer plugin for vim.
 Plugin 'msanders/snipmate.vim'            " implements some of TextMate's snippets features in Vim.
@@ -82,20 +84,16 @@ Plugin 'editorconfig/editorconfig-vim'    " EditorConfig plugin for Vim.
 Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+call vundle#end()                         " All of your Plugins must be added before this line
 
-" Put your non-Plugin stuff after this line
-
+" =========================================================
 " Configuration: nerdtree
 " How can I open a NERDTree automatically when vim starts up?
 autocmd vimenter * NERDTree
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
 
+" =========================================================
 " Configuration: ctrlp.vim
 " switch to filename only search instead of full path
 let g:ctrlp_by_filename = 1
@@ -109,6 +107,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(log|swp|zip|png|jpg|ico)$',
   \ }
 
+" =========================================================
 " Configuration: neocomplcache.vim
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -117,6 +116,7 @@ let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
 
+" =========================================================
 " Configuration: syntastic
 " show list of errors and warnings on the current file
 nmap <leader>e :Errors<CR>
@@ -134,4 +134,20 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
+
+" =========================================================
+" Configuration: vim-go
+" commands
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <Leader>d <Plug>(go-doc-browser)
+" syntax-highlighting for Functions, Methods and Structs
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" auto fmt on save
+let g:go_fmt_autosave = 1
 
