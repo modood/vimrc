@@ -58,7 +58,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Leader
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>w :w<CR>:%retab!<CR>
 nnoremap <Leader>q :q<CR>
 
 " =========================================================
