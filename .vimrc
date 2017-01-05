@@ -49,6 +49,8 @@ inoremap { {}<ESC>i
 inoremap < <><ESC>i
 inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
+inoremap （ （）<ESC>i
+inoremap 【 【】<ESC>i
 
 " Filetype
 autocmd BufRead,BufNewFile *.vue set filetype=xhtml
@@ -58,7 +60,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Leader
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>:%retab!<CR>
+nnoremap <Leader>w :%retab!<CR>:w<CR>
 nnoremap <Leader>q :q<CR>
 
 " =========================================================
