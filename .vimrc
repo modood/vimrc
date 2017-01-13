@@ -10,13 +10,12 @@ set ww=h,l                    " whichwrap
 set enc=utf-8                 " encoding
 set nowrap                    " nowrap
 
-set et                        " expandtab
-set sw=2                      " shiftwidth
-set ts=2                      " tabstop
-
 " Cursor
 "set cul                      " cursorline
 "set cuc                      " cursorcolumn
+
+" Show a tab
+"set list lcs=tab:——          " listchars
 
 " Turn backup off
 set nobk                      " nobackup
@@ -53,10 +52,11 @@ inoremap （ （）<ESC>i
 inoremap 【 【】<ESC>i
 
 " Filetype
-autocmd BufRead,BufNewFile *.vue set filetype=xhtml
-autocmd BufRead,BufNewFile *.wxml set filetype=xhtml
-autocmd BufRead,BufNewFile *.wxss set filetype=css
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Set tabstop shiftwidth expandtab
+autocmd FileType *  set ts=2 | set sw=2 | set et
+autocmd FileType go set ts=4 | set sw=4 | set noet
 
 " Leader
 let mapleader = "\<Space>"
