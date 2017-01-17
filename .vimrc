@@ -60,7 +60,7 @@ autocmd FileType go set ts=4 | set sw=4 | set noet
 
 " Leader
 let mapleader = "\<Space>"
-nnoremap <Leader>w :%retab!<CR>:w<CR>
+nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " =========================================================
@@ -85,6 +85,7 @@ Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
 Plugin 'editorconfig/editorconfig-vim'    " EditorConfig plugin for Vim.
 Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
+Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -153,3 +154,7 @@ let g:go_highlight_build_constraints = 1
 " auto fmt on save
 let g:go_fmt_autosave = 1
 
+" =========================================================
+" Configuration: terryma/vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <s-v> <Plug>(expand_region_shrink)
