@@ -6,9 +6,10 @@ set nocp                      " nocompatible
 set ru                        " ruler
 set nu                        " number
 set hls                       " hlsearch
+set nowrap                    " nowrap
 set ww=h,l                    " whichwrap
 set enc=utf-8                 " encoding
-set nowrap                    " nowrap
+set pt=<F3>                   " pastetoggle
 
 " Cursor
 "set cul                      " cursorline
@@ -26,20 +27,33 @@ set noswf                     " noswapfile
 set ls=2                      " laststatus
 set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statusline
 
+" Filetype
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Set tabstop shiftwidth expandtab
+autocmd FileType *  set ts=2 | set sw=2 | set et
+autocmd FileType go set ts=4 | set sw=4 | set noet
+
 " Smart way to move
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" New tab
+map <C-t> :tabnew<CR>
+
+" Select, Copy and Paste
+map <C-a> <Esc>ggvG
+vmap <C-c> "+y
+map <C-v> <Esc>o<Esc>"+P
+imap <C-v> <Esc>"+p
+
 " Use tab to indent
 nmap <tab> V>
 nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
-
-" Paste toggle - when pasting something in, don't indent.
-set pastetoggle=<F3>
 
 " Automatic double quotes,parenthesis etc
 inoremap ( ()<ESC>i
@@ -50,13 +64,6 @@ inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
 inoremap （ （）<ESC>i
 inoremap 【 【】<ESC>i
-
-" Filetype
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Set tabstop shiftwidth expandtab
-autocmd FileType *  set ts=2 | set sw=2 | set et
-autocmd FileType go set ts=4 | set sw=4 | set noet
 
 " Leader
 let mapleader = "\<Space>"
@@ -153,6 +160,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " auto fmt on save
 let g:go_fmt_autosave = 1
+" Enable goimports to automatically insert import paths instead of gofmt
+let g:go_fmt_command = "goimports"
 
 " =========================================================
 " Configuration: terryma/vim-expand-region
