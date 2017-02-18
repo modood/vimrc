@@ -10,6 +10,7 @@ set nowrap                    " nowrap
 set ww=h,l                    " whichwrap
 set enc=utf-8                 " encoding
 set pt=<F3>                   " pastetoggle
+set mouse=a                   " mouse
 
 " Cursor
 "set cul                      " cursorline
