@@ -5,6 +5,7 @@ filetype plugin indent on     " required
 set nocp                      " nocompatible
 set ru                        " ruler
 set nu                        " number
+set acd                       " autochdir
 set hls                       " hlsearch
 set nowrap                    " nowrap
 set ww=h,l                    " whichwrap
@@ -94,13 +95,15 @@ Plugin 'editorconfig/editorconfig-vim'    " EditorConfig plugin for Vim.
 Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
+Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
 " =========================================================
 " Configuration: nerdtree
-" How can I open a NERDTree automatically when vim starts up?
-autocmd vimenter * NERDTree
+" How can I open NERDTree automatically when vim starts up on opening a directory?
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
 
@@ -168,3 +171,9 @@ let g:go_fmt_command = "goimports"
 " Configuration: terryma/vim-expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <s-v> <Plug>(expand_region_shrink)
+
+" =========================================================
+" Configuration: easymotion/vim-easymotion
+" s{char} to move to {char}
+map  s <Plug>(easymotion-bd-f)
+nmap s <Plug>(easymotion-overwin-f)
