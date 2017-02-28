@@ -5,6 +5,7 @@ filetype plugin indent on     " required
 set nocp                      " nocompatible
 set ru                        " ruler
 set nu                        " number
+set rnu                       " relativenumber
 set acd                       " autochdir
 set hls                       " hlsearch
 set nowrap                    " nowrap
@@ -96,6 +97,7 @@ Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
+Plugin 'scrooloose/nerdcommenter'         " Vim plugin for intensely orgasmic commenting
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -106,6 +108,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
 
 " =========================================================
 " Configuration: ctrlp.vim
