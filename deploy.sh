@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
 # check git and npm
-(command -v git >/dev/null 2>&1 && command -v npm >/dev/null 2>&1 && command -v curl >/dev/null 2>&1) || {
-  echo >&2 "You first need to have git, curl and npm installed. Aborting.";
+(command -v git >/dev/null 2>&1 && command -v npm >/dev/null 2>&1) || {
+  echo >&2 "You first need to have git and npm installed. Aborting.";
   exit 1;
 }
 
-plug=~/.vim/autoload/plug.vim
 vundle=~/.vim/bundle/Vundle.vim
 
-# Download "junegunn/vim-plug" Vim Plugin Manager
-if [ ! -f "$plug" ]; then
-  curl -fLo "$plug" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
 # Download "VundleVim/Vundle.vim" Vim Plugin Manager
 if [ ! -d "$vundle" ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git "$vundle"
@@ -20,10 +15,8 @@ fi
 
 cp .vimrc ~/
 
-# PlugInstall: "junegunn/vim-plug" plugin's install command.
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
-# GoInstallBinaries: "fatih/vim-go" plugin's install command.
-vim +PlugInstall +PluginInstall +GoInstallBinaries +qall
+vim +PluginInstall +qall
 
 cp -rf snippets/* ~/.vim/bundle/snipmate.vim/snippets
 

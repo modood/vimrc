@@ -35,7 +35,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Set tabstop shiftwidth expandtab
 autocmd FileType *  set ts=2 | set sw=2 | set et
-autocmd FileType go set ts=4 | set sw=4 | set noet
 
 " Smart way to move
 map <C-j> <C-W>j
@@ -72,13 +71,6 @@ inoremap 【 【】<ESC>i
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
-
-" =========================================================
-call plug#begin('~/.vim/bundle')          " Specify a directory for plugins: begin('~/some/path/here')
-
-Plug 'fatih/vim-go'                       " Go development plugin for Vim
-
-call plug#end()                           " All of your Plugs must be added before this line
 
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
@@ -151,24 +143,6 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
-
-" =========================================================
-" Configuration: vim-go
-" commands
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <Leader>d <Plug>(go-doc-browser)
-" syntax-highlighting for Functions, Methods and Structs
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-" auto fmt on save
-let g:go_fmt_autosave = 1
-" Enable goimports to automatically insert import paths instead of gofmt
-let g:go_fmt_command = "goimports"
 
 " =========================================================
 " Configuration: terryma/vim-expand-region
