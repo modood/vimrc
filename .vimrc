@@ -90,6 +90,7 @@ Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
 Plugin 'scrooloose/nerdcommenter'         " Vim plugin for intensely orgasmic commenting
+Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -154,3 +155,11 @@ vmap <s-v> <Plug>(expand_region_shrink)
 " s{char} to move to {char}
 map  s <Plug>(easymotion-bd-f)
 nmap s <Plug>(easymotion-overwin-f)
+
+" =========================================================
+" Configuration: terryma/vim-multiple-cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-g>'
+let g:multi_cursor_prev_key='<C-b>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
