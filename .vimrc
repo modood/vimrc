@@ -13,6 +13,7 @@ set ww=h,l                    " whichwrap
 set enc=utf-8                 " encoding
 set pt=<F3>                   " pastetoggle
 set mouse=a                   " mouse
+set ff=dos                    " fileformat
 
 " Cursor
 "set cul                      " cursorline
@@ -34,7 +35,7 @@ set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statu
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Set tabstop shiftwidth expandtab
-autocmd FileType *  set ts=2 | set sw=2 | set et
+autocmd FileType *  set ts=4 | set sw=4 | set et
 
 " Smart way to move
 map <C-j> <C-W>j
@@ -70,7 +71,7 @@ inoremap 【 【】<ESC>i
 " Leader
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <Leader>q :NERDTreeClose<CR>:wq<CR>
 
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
@@ -84,7 +85,6 @@ Plugin 'scrooloose/syntastic'             " Syntax checking hacks for vim.
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'Shougo/neocomplcache.vim'         " Ultimate auto-completion system for Vim.
 Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
-Plugin 'editorconfig/editorconfig-vim'    " EditorConfig plugin for Vim.
 Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
