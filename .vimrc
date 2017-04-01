@@ -32,10 +32,11 @@ set ls=2                      " laststatus
 set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statusline
 
 " Filetype
+autocmd BufRead,BufNewFile *.vue set filetype=xhtml
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Set tabstop shiftwidth expandtab
-autocmd FileType *  set ts=4 | set sw=4 | set et
+autocmd FileType *  set ts=2 | set sw=2 | set et
 
 " Smart way to move
 map <C-j> <C-W>j
@@ -91,6 +92,7 @@ Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions o
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
 Plugin 'scrooloose/nerdcommenter'         " Vim plugin for intensely orgasmic commenting
 Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
+Plugin 'mattn/emmet-vim'                  " The essential toolkit for web-developers
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
