@@ -38,6 +38,17 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Set tabstop shiftwidth expandtab
 autocmd FileType *  set ts=2 | set sw=2 | set et
 
+" Leave the cursor at center of window
+nnoremap j jzz
+nnoremap k kzz
+map <C-d> <C-d>zz
+map <C-f> <C-f>zz
+map <C-u> <C-u>zz
+map <C-o> <C-o>zz
+
+" Stop the highlighting
+noremap <esc> :nohl<cr>
+
 " Smart way to move
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -72,7 +83,8 @@ inoremap 【 【】<ESC>i
 " Leader
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :NERDTreeClose<CR>:wq<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>qq :NERDTreeClose<CR>:wq<CR>
 
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
@@ -92,7 +104,9 @@ Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions o
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
 Plugin 'scrooloose/nerdcommenter'         " Vim plugin for intensely orgasmic commenting
 Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
-Plugin 'mattn/emmet-vim'                  " The essential toolkit for web-developers
+Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the end of lines.
+Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
+Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
