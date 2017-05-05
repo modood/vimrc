@@ -36,7 +36,8 @@ $ ./deploy.sh
 | `<C-w>hjkl` | moves between Vim viewports |
 | `<C-hjkl>`  | moves between Vim viewports |
 | `<Leader>w` | Write the current file |
-| `<Leader>q` | Write the current file and exit |
+| `<Leader>q` | Exit |
+| `<Leader>qq` | Write the current file and exit |
 
 *   [syntastic](https://github.com/vim-syntastic/syntastic)
 
@@ -44,6 +45,13 @@ $ ./deploy.sh
 |:----|:------------|
 | `<Leader>e`  | Show list of errors and warnings on the current file |
 | `<Leader>np` | Turn to next or previous errors, after open errors list |
+
+*   [vim-go](https://github.com/fatih/vim-go)
+
+| key | description |
+|:----|:------------|
+| `<Leader>r`  | Build and run current main package |
+| `<Leader>b`  | Build current package |
 
 *   [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
@@ -82,6 +90,7 @@ $ ./deploy.sh
 | CtrlP: `<c-x>`  | open the selected entry in a new split |
 | CtrlP: `<c-y>`  | create a new file and its parent directories |
 | CtrlP: `<c-z>`  | mark/unmark multiple files and <c-o> to open them |
+| CtrlP: `<F5>`   | Refresh the match window and purge the cache for the current directory |
 
 *   [vim-expand-region](https://github.com/terryma/vim-expand-region)
 

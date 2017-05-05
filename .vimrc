@@ -2,11 +2,11 @@ syntax on                     " syntax highlighing
 filetype plugin indent on     " required
 
 " Basic configuration
+" set acd                     " autochdir
 set nocp                      " nocompatible
 set ru                        " ruler
 set nu                        " number
 set rnu                       " relativenumber
-set acd                       " autochdir
 set hls                       " hlsearch
 set nowrap                    " nowrap
 set ww=h,l                    " whichwrap
@@ -37,17 +37,18 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Set tabstop shiftwidth expandtab
 autocmd FileType *  set ts=2 | set sw=2 | set et
+autocmd FileType go set ts=4 | set sw=4 | set noet
 
 " Leave the cursor at center of window
-nnoremap j jzz
-nnoremap k kzz
+" nnoremap j jzz
+" nnoremap k kzz
 map <C-d> <C-d>zz
 map <C-f> <C-f>zz
 map <C-u> <C-u>zz
 map <C-o> <C-o>zz
 
 " Stop the highlighting
-noremap <esc> :nohl<cr>
+" noremap <esc> :nohl<cr>
 
 " Smart way to move
 map <C-j> <C-W>j
@@ -107,6 +108,7 @@ Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple sel
 Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the end of lines.
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
+Plugin 'fatih/vim-go'                     " Go development plugin for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -179,3 +181,27 @@ let g:multi_cursor_next_key='<C-g>'
 let g:multi_cursor_prev_key='<C-b>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+" =========================================================
+" Configuration: mileszs/ack.vim
+nnoremap <Leader>a :Ack!<Space>
+
+
+" =========================================================
+" Configuration: vim-go
+" commands
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <Leader>d <Plug>(go-doc-browser)
+" syntax-highlighting for Functions, Methods and Structs
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" auto fmt on save
+let g:go_fmt_autosave = 1
+" Enable goimports to automatically insert import paths instead of gofmt
+let g:go_fmt_command = "goimports"
+

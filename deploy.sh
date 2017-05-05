@@ -16,7 +16,7 @@ fi
 cp .vimrc ~/
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
-vim +PluginInstall +qall
+vim +PluginInstall +GoInstallBinaries +qall
 
 cp -rf snippets/* ~/.vim/bundle/snipmate.vim/snippets
 
