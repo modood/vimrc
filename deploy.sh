@@ -14,6 +14,7 @@ if [ ! -d "$vundle" ]; then
 fi
 
 cp .vimrc ~/
+cp .eslintrc.js ~/
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
 vim +PluginInstall +GoInstallBinaries +qall
@@ -21,6 +22,6 @@ vim +PluginInstall +GoInstallBinaries +qall
 cp -rf snippets/* ~/.vim/bundle/snipmate.vim/snippets
 
 # install npm dependencies
-command -v eslint >/dev/null 2>&1 || npm install -g eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+command -v eslint >/dev/null 2>&1 || npm install -g eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
 command -v instant-markdown-d >/dev/null 2>&1 || npm install -g instant-markdown-d
 
