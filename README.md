@@ -67,6 +67,8 @@ $ ./deploy.sh
 | `<C-n>` | Toggle |
 | `<C-m>` | Find the current file in the tree |
 | `?`     | Got help |
+| `<S-i>` | 显示隐藏文件 |
+| `<S-a>` | 最大化显示左侧目录 |
 
 *   [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 

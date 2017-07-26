@@ -34,6 +34,7 @@ set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statu
 " Filetype
 autocmd BufRead,BufNewFile *.vue set filetype=xhtml
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.ts set filetype=typescript
 
 " Set tabstop shiftwidth expandtab
 autocmd FileType *  set ts=2 | set sw=2 | set et
@@ -109,6 +110,7 @@ Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the 
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
 Plugin 'fatih/vim-go'                     " Go development plugin for Vim
+Plugin 'leafgarland/typescript-vim'       " Typescript syntax files for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -125,6 +127,8 @@ map <C-m> :NERDTreeFind<CR>
 " Configuration: ctrlp.vim
 " switch to filename only search instead of full path
 let g:ctrlp_by_filename = 1
+" switch to show hidden files
+let g:ctrlp_show_hidden = 1
 " switch to regexp mode.
 let g:ctrlp_regexp = 0
 " set working path
@@ -151,10 +155,15 @@ nmap <leader>e :Errors<CR>
 " turn to next or previous errors, after open errors list
 nmap <leader>n :lnext<CR>
 nmap <leader>p :lprevious<CR>
-" check also when just opened the file
+" check also when just write the file
+let g:syntastic_check_on_wq = 1
 let g:syntastic_check_on_open = 0
+" automatically opened when errors are detected, and closed when none are detected
+let g:syntastic_auto_loc_list = 1
 " syntastic checker for javascript
 let g:syntastic_javascript_checkers = ['eslint']
+" syntastic checker for typescript
+let g:syntastic_typescript_checkers = ['tslint']
 " don't put icons on the sign column (it hides the vcs status icons of signify)
 let g:syntastic_enable_signs = 1
 " custom icons (enable them if you use a patched font, and enable the previous setting)
@@ -162,6 +171,9 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
+" Error highlighting
+highlight SyntasticError ctermbg=Red ctermfg=White
+highlight SyntasticWarning ctermbg=Yellow ctermfg=Blue
 
 " =========================================================
 " Configuration: terryma/vim-expand-region
@@ -185,7 +197,6 @@ let g:multi_cursor_quit_key='<Esc>'
 " =========================================================
 " Configuration: mileszs/ack.vim
 nnoremap <Leader>a :Ack!<Space>
-
 
 " =========================================================
 " Configuration: vim-go
