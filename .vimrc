@@ -34,7 +34,6 @@ set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statu
 " Filetype
 autocmd BufRead,BufNewFile *.vue set filetype=xhtml
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.ts set filetype=typescript
 
 " Set tabstop shiftwidth expandtab
 autocmd FileType *  set ts=2 | set sw=2 | set et
@@ -63,7 +62,6 @@ map <C-t> :tabnew<CR>
 " Select, Copy and Paste
 map <C-a> <Esc>ggvG
 vmap <C-c> "+y
-map <C-v> <Esc>o<Esc>"+P
 imap <C-v> <Esc>"+p
 
 " Use tab to indent
@@ -110,7 +108,6 @@ Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the 
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
 Plugin 'fatih/vim-go'                     " Go development plugin for Vim
-Plugin 'leafgarland/typescript-vim'       " Typescript syntax files for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -162,8 +159,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_auto_loc_list = 1
 " syntastic checker for javascript
 let g:syntastic_javascript_checkers = ['eslint']
-" syntastic checker for typescript
-let g:syntastic_typescript_checkers = ['tslint']
 " don't put icons on the sign column (it hides the vcs status icons of signify)
 let g:syntastic_enable_signs = 1
 " custom icons (enable them if you use a patched font, and enable the previous setting)
