@@ -49,6 +49,7 @@ $ ./deploy.sh
 |:----|:------------|
 | `<Leader>r`  | Build and run current main package |
 | `<Leader>b`  | Build current package |
+| `<Leader>d`  | Go to symbol/declaration |
 
 *   [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 

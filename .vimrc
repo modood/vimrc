@@ -198,7 +198,7 @@ nnoremap <Leader>a :Ack!<Space>
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <Leader>d <Plug>(go-doc-browser)
+au FileType go nmap <Leader>d <Plug>(go-def)
 " syntax-highlighting for Functions, Methods and Structs
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -210,4 +210,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_autosave = 1
 " Enable goimports to automatically insert import paths instead of gofmt
 let g:go_fmt_command = "goimports"
-
+" Use this option to define the command to be used for |:GoDef|. By default
+" `guru` is being used as it covers all edge cases. But one might also use
+" `godef` as it's faster. Current valid options are: `[guru, godef]` >
+let g:go_def_mode = 'godef'
