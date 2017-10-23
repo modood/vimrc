@@ -1,9 +1,6 @@
 # vimrc
 A shell script to deploy my vim configuration
 
-## preview
-![preview](preview.jpg)
-
 ## install
 The installation will overwrite your `.vimrc` file, be sure to backup your existing vim configuration.
 
