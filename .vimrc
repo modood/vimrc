@@ -59,7 +59,7 @@ map <C-l> <C-W>l
 " New tab
 map <C-t> :tabnew<CR>
 
-" Select, Copy and Paste
+" Select, Copy and Paste, gvim is needed.
 map <C-a> <Esc>ggvG
 vmap <C-c> "+y
 imap <C-v> <Esc>"+p
@@ -69,6 +69,9 @@ nmap <tab> V>
 nmap <s-tab> V<
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+" Convenient ESC
+inoremap jj <Esc>
 
 " Automatic double quotes,parenthesis etc
 inoremap ( ()<ESC>i
@@ -108,6 +111,7 @@ Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the 
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
 Plugin 'fatih/vim-go'                     " Go development plugin for Vim
+Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -214,3 +218,34 @@ let g:go_fmt_command = "goimports"
 " `guru` is being used as it covers all edge cases. But one might also use
 " `godef` as it's faster. Current valid options are: `[guru, godef]` >
 let g:go_def_mode = 'godef'
+
+" =========================================================
+" Configuration: majutsushi/tagbar
+nmap <C-b> :TagbarToggle<CR>
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
