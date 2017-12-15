@@ -112,6 +112,7 @@ Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux pan
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
 Plugin 'fatih/vim-go'                     " Go development plugin for Vim
 Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
+Plugin 'severin-lemaignan/vim-minimap'    " A Sublime-like minimap for VIM
 
 call vundle#end()                         " All of your Plugins must be added before this line
 

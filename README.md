@@ -51,6 +51,13 @@ $ ./deploy.sh
 | `<Leader>b`  | Build current package |
 | `<Leader>d`  | Go to symbol/declaration |
 
+*   [vim-minimap](https://github.com/severin-lemaignan/vim-minimap)
+
+| key | description |
+|:----|:------------|
+| `<Leader>mm`  | display the minimap |
+| `<Leader>mc`  | close the minimap |
+
 *   [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
 | key | description |
