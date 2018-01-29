@@ -85,9 +85,9 @@ inoremap 【 【】<ESC>i
 
 " Leader
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>qq :NERDTreeClose<CR>:wq<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>qq :NERDTreeClose<CR>:wq<CR>
 
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
@@ -123,7 +123,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
-map <C-f> :NERDTreeFind<CR>
+map <C-i> :NERDTreeFind<CR>
 
 " =========================================================
 " Configuration: ctrlp.vim
@@ -190,20 +190,19 @@ nmap s <Plug>(easymotion-overwin-f)
 " Configuration: terryma/vim-multiple-cursors
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-g>'
-let g:multi_cursor_prev_key='<C-b>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " =========================================================
 " Configuration: mileszs/ack.vim
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <leader>a :Ack!<Space>
 
 " =========================================================
 " Configuration: vim-go
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <Leader>d <Plug>(go-def)
+au FileType go nmap <leader>d <Plug>(go-def)
 " auto |:GoMetaLinter| on save
 let g:go_metalinter_autosave = 1
 " syntax-highlighting for Functions, Methods and Structs
