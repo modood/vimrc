@@ -25,7 +25,6 @@ $ ./deploy.sh
 | `<C-y>` | Scroll window [count] lines upwards |
 | `<C-d>` | Scroll window Downwards |
 | `<C-u>` | Scroll window upwards |
-| `<C-f>` | Scroll window |
 | `<C-a>` | Select all contents of the file |
 | `<C-c>` | Copy selected text |
 | `<C-v>` | Paste |
@@ -70,7 +69,7 @@ $ ./deploy.sh
 | key | description |
 |:----|:------------|
 | `<C-n>` | Toggle |
-| `<C-m>` | Find the current file in the tree |
+| `<C-f>` | Find the current file in the tree |
 | `?`     | Got help |
 | `<S-i>` | 显示隐藏文件 |
 | `<S-a>` | 最大化显示左侧目录 |
@@ -80,8 +79,14 @@ $ ./deploy.sh
 | key | description |
 |:----|:------------|
 | `<C-g>` | cursor next |
-| `<C-b>` | cursor prev |
+| `??`    | cursor prev |
 | `<C-x>` | cursor skip |
+
+*   [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+
+| key | description |
+|:----|:------------|
+| `<C-b>` | TagbarToggle |
 
 *   [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 

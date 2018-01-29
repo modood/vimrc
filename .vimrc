@@ -42,8 +42,8 @@ autocmd FileType go set ts=4 | set sw=4 | set noet
 " Leave the cursor at center of window
 " nnoremap j jzz
 " nnoremap k kzz
+nnoremap n nzz
 map <C-d> <C-d>zz
-map <C-f> <C-f>zz
 map <C-u> <C-u>zz
 map <C-o> <C-o>zz
 
@@ -123,7 +123,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
+map <C-f> :NERDTreeFind<CR>
 
 " =========================================================
 " Configuration: ctrlp.vim
@@ -204,6 +204,8 @@ nnoremap <Leader>a :Ack!<Space>
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <Leader>d <Plug>(go-def)
+" auto |:GoMetaLinter| on save
+let g:go_metalinter_autosave = 1
 " syntax-highlighting for Functions, Methods and Structs
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
