@@ -10,30 +10,58 @@ $ cd vimrc
 $ ./deploy.sh
 ```
 
-## keyboard shortcuts
+## keyboard shortcuts overview
 
-*   Basic
-
-| key | description |
-|:----|:------------|
-| `<C-z>` | Suspend |
-| `<C-r>` | Redo changes |
-| `<C-t>` | New tab |
-| `<C-i>` | indent |
-| `<C-o>` | Jump back to the previous location |
-| `<C-e>` | Scroll window [count] lines downwards |
-| `<C-y>` | Scroll window [count] lines upwards |
-| `<C-d>` | Scroll window Downwards |
-| `<C-u>` | Scroll window upwards |
-| `<C-a>` | Select all contents of the file |
-| `<C-c>` | Copy selected text |
-| `<C-v>` | Paste |
+| key | description | plugin |
+|:----|:------------|:-------|
+| `<C-q>` | - | - |
+| `<C-w>hjkl` | moves between Vim viewports | - |
+| `<C-e>` | Scroll window [count] lines downwards | - |
+| `<C-r>` | Redo changes | - |
+| `<C-t>` | New tab | - |
+| `<C-y>` | Scroll window [count] lines upwards | - |
+| `<C-u>` | Scroll window upwards | - |
+| `<C-i>` | Find the current file in the tree | nerdtree |
+| `<C-o>` | Jump back to the previous location | - |
+| `<C-p>` | Open CtrlP | ctrlp.vim |
+| `<C-a>` | Select all contents of the file | - |
+| `<C-s>` | Tmux prefix key | tmux |
+| `<C-d>` | Scroll window Downwards | - |
+| `<C-f>` | - | - |
+| `<C-g>` | Cursor next | vim-multiple-cursors |
+| `<C-hjkl>` | moves between Vim viewports | vim and tmux |
+| `<C-z>` | Suspend | - |
+| `<C-x>` | Cursor skip | vim-multiple-cursors |
+| `<C-c>` | -<br/>[VISUAL] Copy selected text | -<br/>gvim |
+| `<C-v>` | Switch to [VISUAL BLOCK] mode<br/>[INSERT] Paste | -<br/>gvim |
+| `<C-b>` | Toggle tagbar | tagbar |
+| `<C-n>` | Toggle Terdtree | nerdtree |
+| `<C-m>` | Jump to the location of error | syntastic |
 | `<C-;>` | Show clipboard |
-| `<C-w>hjkl` | moves between Vim viewports |
-| `<C-hjkl>`  | moves between Vim viewports |
-| `<Leader>w` | Write the current file |
-| `<Leader>q` | Exit |
-| `<Leader>qq` | Write the current file and exit |
+
+| key | description | plugin |
+|:----|:------------|:-------|
+| `<Leader>q` | Exit | - |
+| `<Leader>qq` | Write the current file and exit vim | - |
+| `<Leader>w` | Write the current file | - |
+| `<Leader>e`  | Show list of errors and warnings | syntastic |
+| `<Leader>r`  | Build and run current main package | vim-go |
+| `<Leader>tyuio`  | - | - |
+| `<Leader>p`  | Turn to previous errors | syntastic |
+| `<Leader>a`  | Open Ack | ack.vim |
+| `<Leader>s`  | - | - |
+| `<Leader>d`  | Go to symbol/declaration | vim-go |
+| `<Leader>fghjklzx`  | - | - |
+| `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
+| `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
+| `<Leader>vb`  | - | - |
+| `<Leader>b`  | Build current package | vim-go |
+| `<Leader>n`  | Turn to next errors | syntastic |
+| `<Leader>m`  | - | - |
+| `<Leader>mm` | Display the minimap | vim-minimap |
+| `<Leader>mc` | Close the minimap | vim-minimap |
+
+## keyboard shortcuts
 
 *   [syntastic](https://github.com/vim-syntastic/syntastic)
 
@@ -71,18 +99,17 @@ $ ./deploy.sh
 | `<C-n>` | Toggle |
 | `<C-f>` | Find the current file in the tree |
 | `?`     | Got help |
-| `<S-i>` | 显示隐藏文件 |
-| `<S-a>` | 最大化显示左侧目录 |
+| `<I>` | Show hidden files |
+| `<A>` | Zoom the nerdtree window |
 
 *   [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 
 | key | description |
 |:----|:------------|
 | `<C-g>` | cursor next |
-| `??`    | cursor prev |
 | `<C-x>` | cursor skip |
 
-*   [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+*   [tagbar](https://github.com/majutsushi/tagbar)
 
 | key | description |
 |:----|:------------|
