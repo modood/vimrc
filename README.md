@@ -21,13 +21,13 @@ $ ./deploy.sh
 | `<C-t>` | New tab | - |
 | `<C-y>` | Scroll window [count] lines upwards | - |
 | `<C-u>` | Scroll window upwards | - |
-| `<C-i>` | Find the current file in the tree | nerdtree |
+| `<C-i>` | - | - |
 | `<C-o>` | Jump back to the previous location | - |
 | `<C-p>` | Open CtrlP | ctrlp.vim |
 | `<C-a>` | Select all contents of the file | - |
 | `<C-s>` | Tmux prefix key | tmux |
 | `<C-d>` | Scroll window Downwards | - |
-| `<C-f>` | - | - |
+| `<C-f>` | Find the current file in the tree | nerdtree |
 | `<C-g>` | Cursor next | vim-multiple-cursors |
 | `<C-hjkl>` | moves between Vim viewports | vim and tmux |
 | `<C-z>` | Suspend | - |
@@ -44,22 +44,27 @@ $ ./deploy.sh
 | `<Leader>q` | Exit | - |
 | `<Leader>qq` | Write the current file and exit vim | - |
 | `<Leader>w` | Write the current file | - |
-| `<Leader>e`  | Show list of errors and warnings | syntastic |
+| `<Leader>e`  | - | - |
 | `<Leader>r`  | Build and run current main package | vim-go |
-| `<Leader>tyuio`  | - | - |
-| `<Leader>p`  | Turn to previous errors | syntastic |
+| `<Leader>tyuiop`  | - | - |
 | `<Leader>a`  | Open Ack | ack.vim |
 | `<Leader>s`  | - | - |
 | `<Leader>d`  | Go to symbol/declaration | vim-go |
-| `<Leader>fghjklzx`  | - | - |
+| `<Leader>fgh`  | - | - |
+| `<Leader>j`  | Turn to next of location list | - |
+| `<Leader>k`  | Turn to previous of location list | - |
+| `<Leader>lzx`  | - | - |
 | `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
 | `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
 | `<Leader>vb`  | - | - |
 | `<Leader>b`  | Build current package | vim-go |
-| `<Leader>n`  | Turn to next errors | syntastic |
-| `<Leader>m`  | - | - |
+| `<Leader>nm`  | - | - |
 | `<Leader>mm` | Display the minimap | vim-minimap |
 | `<Leader>mc` | Close the minimap | vim-minimap |
+
+| key | description |
+|:----|:------------|
+| `<esc><esc><esc><esc>` | reset all error checking: <br/>1.  stop the highlighting<br/>2.  close locationlist<br/>3.  reset syntastic |
 
 ## keyboard shortcuts
 

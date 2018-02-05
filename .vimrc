@@ -40,15 +40,10 @@ autocmd FileType *  set ts=2 | set sw=2 | set et
 autocmd FileType go set ts=4 | set sw=4 | set noet
 
 " Leave the cursor at center of window
-" nnoremap j jzz
-" nnoremap k kzz
 nnoremap n nzz
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
 map <C-o> <C-o>zz
-
-" Stop the highlighting
-" noremap <esc> :nohl<cr>
 
 " Smart way to move
 map <C-j> <C-W>j
@@ -89,6 +84,13 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>qq :NERDTreeClose<CR>:wq<CR>
 
+" turn to next or previous errors, after open location list
+nmap <leader>j :lnext<CR>
+nmap <leader>k :lprevious<CR>
+
+" reset all error checking: Stop the highlighting, close locationlist, reset syntastic
+noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>:SyntasticReset<cr>
+
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
 call vundle#begin('~/.vim/bundle')        " Specify a directory for plugins: begin('~/some/path/here')
@@ -123,7 +125,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
-map <C-i> :NERDTreeFind<CR>
+map <C-f> :NERDTreeFind<CR>
 
 " =========================================================
 " Configuration: ctrlp.vim
@@ -153,10 +155,7 @@ let g:neocomplcache_enable_smart_case = 1
 " =========================================================
 " Configuration: syntastic
 " show list of errors and warnings on the current file
-nmap <leader>e :Errors<CR>
-" turn to next or previous errors, after open errors list
-nmap <leader>n :lnext<CR>
-nmap <leader>p :lprevious<CR>
+" xnmap <leader>e :Errors<CR>
 " check also when just write the file
 let g:syntastic_check_on_wq = 1
 let g:syntastic_check_on_open = 0
@@ -205,6 +204,8 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>d <Plug>(go-def)
 " auto |:GoMetaLinter| on save
 let g:go_metalinter_autosave = 1
+" [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)
+let g:go_list_type = 'locationlist'
 " syntax-highlighting for Functions, Methods and Structs
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
