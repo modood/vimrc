@@ -21,7 +21,7 @@ $ ./deploy.sh
 | `<C-t>` | New tab | - |
 | `<C-y>` | Scroll window [count] lines upwards | - |
 | `<C-u>` | Scroll window upwards | - |
-| `<C-i>` | - | - |
+| `<C-i>` | `<tab>` | **do not edit** |
 | `<C-o>` | Jump back to the previous location | - |
 | `<C-p>` | Open CtrlP | ctrlp.vim |
 | `<C-a>` | Select all contents of the file | - |
@@ -36,7 +36,7 @@ $ ./deploy.sh
 | `<C-v>` | Switch to [VISUAL BLOCK] mode<br/>[INSERT] Paste | -<br/>gvim |
 | `<C-b>` | Toggle tagbar | tagbar |
 | `<C-n>` | Toggle Terdtree | nerdtree |
-| `<C-m>` | Jump to the location of error | syntastic |
+| `<C-m>` | `<cr>` | **do not edit** |
 | `<C-;>` | Show clipboard |
 
 | key | description | plugin |
