@@ -108,6 +108,10 @@ nnoremap <leader>qq :NERDTreeClose<CR>:wq<CR>
 nmap <leader>j :lnext<CR>
 nmap <leader>k :lprevious<CR>
 
+" turn to next or previous errors, after open quickfix list
+nmap <leader>l :cnext<CR>
+nmap <leader>h :cprevious<CR>
+
 " reset all error checking: Stop the highlighting, close locationlist, reset syntastic
 noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>:SyntasticReset<cr>
 
@@ -214,13 +218,14 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " =========================================================
 " Configuration: mileszs/ack.vim
-nnoremap <leader>a :Ack!<Space>
+" Just like |:Ack| but instead of the |quickfix| list,
+" matches are placed in the current |location-list|.
+nnoremap <C-c><C-c> :LAck!<Space>
 
 " =========================================================
 " Configuration: vim-go
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>d <Plug>(go-def)
 " auto |:GoMetaLinter| on save
 let g:go_metalinter_autosave = 1

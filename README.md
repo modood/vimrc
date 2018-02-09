@@ -33,9 +33,6 @@ $ ./deploy.sh
 | `<C-z>` | Suspend | - |
 | `<C-x>` | Cursor skip | vim-multiple-cursors |
 | `<C-c>` | [N] Use as a prefix key<br/>[V] Copy selected text | -<br/>gvim |
-| `<C-c>ff` | close or open all fold | - |
-| `<C-c>fc` | close or open a fold | - |
-| `<C-c>mm` | toggle the minimap | - |
 | `<C-v>` | [N] Switch to [VB] mode<br/>[I] Paste | -<br/>gvim |
 | `<C-b>` | Toggle tagbar | tagbar |
 | `<C-n>` | Toggle Terdtree | nerdtree |
@@ -44,24 +41,27 @@ $ ./deploy.sh
 
 | key | description | plugin |
 |:----|:------------|:-------|
+| `<C-c><C-c>` | Open Ack | ack.vim |
+| `<C-c>ff` | close or open all fold | - |
+| `<C-c>fc` | close or open a fold | - |
+| `<C-c>mm` | toggle the minimap | - |
+
+| key | description | plugin |
+|:----|:------------|:-------|
 | `<Leader>q` | Exit | - |
 | `<Leader>qq` | Write the current file and exit vim | - |
 | `<Leader>w` | Write the current file | - |
 | `<Leader>e`  | - | - |
 | `<Leader>r`  | Build and run current main package | vim-go |
-| `<Leader>tyuiop`  | - | - |
-| `<Leader>a`  | Open Ack | ack.vim |
-| `<Leader>s`  | - | - |
+| `<Leader>tyuiopas`  | - | - |
 | `<Leader>d`  | Go to symbol/declaration | vim-go |
-| `<Leader>fgh`  | - | - |
-| `<Leader>j`  | Turn to next of location list | - |
-| `<Leader>k`  | Turn to previous of location list | - |
-| `<Leader>lzx`  | - | - |
+| `<Leader>fg`  | - | - |
+| `<Leader>hl`  | Turn to previous/next of quickfix list | - |
+| `<Leader>kj`  | Turn to previous/next of location list | - |
+| `<Leader>zx`  | - | - |
 | `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
 | `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
-| `<Leader>vb`  | - | - |
-| `<Leader>b`  | Build current package | vim-go |
-| `<Leader>nm`  | - | - |
+| `<Leader>vbnm`  | - | - |
 
 | key | description |
 |:----|:------------|
@@ -69,19 +69,11 @@ $ ./deploy.sh
 
 ## keyboard shortcuts
 
-*   [syntastic](https://github.com/vim-syntastic/syntastic)
-
-| key | description |
-|:----|:------------|
-| `<Leader>e`  | Show list of errors and warnings on the current file |
-| `<Leader>np` | Turn to next or previous errors, after open errors list |
-
 *   [vim-go](https://github.com/fatih/vim-go)
 
 | key | description |
 |:----|:------------|
 | `<Leader>r`  | Build and run current main package |
-| `<Leader>b`  | Build current package |
 | `<Leader>d`  | Go to symbol/declaration |
 
 *   [vim-minimap](https://github.com/severin-lemaignan/vim-minimap)
