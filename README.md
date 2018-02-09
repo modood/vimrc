@@ -32,12 +32,14 @@ $ ./deploy.sh
 | `<C-hjkl>` | moves between Vim viewports | vim and tmux |
 | `<C-z>` | Suspend | - |
 | `<C-x>` | Cursor skip | vim-multiple-cursors |
-| `<C-c>` | -<br/>[VISUAL] Copy selected text | -<br/>gvim |
-| `<C-v>` | Switch to [VISUAL BLOCK] mode<br/>[INSERT] Paste | -<br/>gvim |
+| `<C-c>` | [N] Use as a prefix key<br/>[V] Copy selected text | -<br/>gvim |
+| `<C-c>ff` | close or open all fold | - |
+| `<C-c>fc` | close or open a fold | - |
+| `<C-v>` | [N] Switch to [VB] mode<br/>[I] Paste | -<br/>gvim |
 | `<C-b>` | Toggle tagbar | tagbar |
 | `<C-n>` | Toggle Terdtree | nerdtree |
 | `<C-m>` | `<cr>` | **do not edit** |
-| `<C-;>` | Show clipboard |
+| `<C-;>` | Show clipboard | Ubuntu |
 
 | key | description | plugin |
 |:----|:------------|:-------|
