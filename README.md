@@ -35,6 +35,7 @@ $ ./deploy.sh
 | `<C-c>` | [N] Use as a prefix key<br/>[V] Copy selected text | -<br/>gvim |
 | `<C-c>ff` | close or open all fold | - |
 | `<C-c>fc` | close or open a fold | - |
+| `<C-c>mm` | toggle the minimap | - |
 | `<C-v>` | [N] Switch to [VB] mode<br/>[I] Paste | -<br/>gvim |
 | `<C-b>` | Toggle tagbar | tagbar |
 | `<C-n>` | Toggle Terdtree | nerdtree |
@@ -61,8 +62,6 @@ $ ./deploy.sh
 | `<Leader>vb`  | - | - |
 | `<Leader>b`  | Build current package | vim-go |
 | `<Leader>nm`  | - | - |
-| `<Leader>mm` | Display the minimap | vim-minimap |
-| `<Leader>mc` | Close the minimap | vim-minimap |
 
 | key | description |
 |:----|:------------|
@@ -89,8 +88,7 @@ $ ./deploy.sh
 
 | key | description |
 |:----|:------------|
-| `<Leader>mm`  | display the minimap |
-| `<Leader>mc`  | close the minimap |
+| `<C-c>mm` | toggle the minimap |
 
 *   [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 

@@ -272,3 +272,11 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" =========================================================
+" Configuration: severin-lemaignan/vim-minimap
+let g:minimap_toggle='<C-c>mm'
+" prevent the default bindings
+let g:minimap_show='<Nop>'
+let g:minimap_update='<Nop>'
+let g:minimap_close='<Nop>'
