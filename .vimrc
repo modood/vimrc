@@ -5,8 +5,6 @@ filetype plugin indent on     " required
 " set acd                     " autochdir
 set nocp                      " nocompatible
 set ru                        " ruler
-set nu                        " number
-set rnu                       " relativenumber
 set hls                       " hlsearch
 set nowrap                    " nowrap
 set ww=h,l                    " whichwrap
@@ -14,6 +12,36 @@ set enc=utf-8                 " encoding
 set pt=<F3>                   " pastetoggle
 set mouse=a                   " mouse
 set ff=dos                    " fileformat
+
+" Number
+set nu                        " number
+set rnu                       " relativenumber
+autocmd InsertEnter * :set nornu
+autocmd InsertLeave * :set rnu
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+  else
+    set rnu
+  endif
+endfunc
+nnoremap <C-c>c :call NumberToggle()<cr>
+
+" http://stackoverflow.com/questions/13194428/is-better-way-to-zoom-windows-in-vim-than-zoomwin
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-c>z :ZoomToggle<CR>
 
 " Cursor
 "set cul                      " cursorline
@@ -72,12 +100,26 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " New tab
-map <C-t> :tabnew<CR>
+nmap <C-t> :tabnew<CR>
+nmap <C-c>n :tabnext<cr>
 
 " Select, Copy and Paste, gvim is needed.
-map <C-a> <Esc>ggvG
+map <C-a> <Esc>ggvG$
 vmap <C-c> "+y
 imap <C-v> <Esc>"+p
+
+" w!! to sudo & write a file
+cmap w!! w !sudo tee >/dev/null %
+
+" remap U to <C-r> for easier redo
+nnoremap U <C-r>
+
+" Highlight TODO, DONE, BUG, etc.
+if has("autocmd")
+  if v:version > 701
+    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|DONE\|BUG\)')
+  endif
+endif
 
 " Use tab to indent
 nmap <tab> V>
@@ -227,6 +269,8 @@ nnoremap <C-c><C-c> :LAck!<Space>
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>d <Plug>(go-def)
+" disable <C-t> https://github.com/fatih/vim-go/issues/1202
+let g:go_def_mapping_enabled = 0
 " auto |:GoMetaLinter| on save
 let g:go_metalinter_autosave = 1
 " [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)

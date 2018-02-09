@@ -42,8 +42,11 @@ $ ./deploy.sh
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<C-c><C-c>` | Open Ack | ack.vim |
-| `<C-c>ff` | close or open all fold | - |
-| `<C-c>fc` | close or open a fold | - |
+| `<C-c>c` | toggle rnu or nornu | - |
+| `<C-c>z` | toggle zoom or restore window | - |
+| `<C-c>ff` | toggle close or open all fold | - |
+| `<C-c>fc` | toggle close or open a fold | - |
+| `<C-c>n` | tabnext | - |
 | `<C-c>mm` | toggle the minimap | - |
 
 | key | description | plugin |
@@ -66,6 +69,7 @@ $ ./deploy.sh
 | key | description |
 |:----|:------------|
 | `<esc><esc><esc><esc>` | reset all error checking: <br/>1.  stop the highlighting<br/>2.  close locationlist<br/>3.  reset syntastic |
+| `:w!!` | sudo & write a file |
 
 ## keyboard shortcuts
 
