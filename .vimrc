@@ -181,6 +181,9 @@ Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI
 Plugin 'fatih/vim-go'                     " Go development plugin for Vim
 Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
 Plugin 'severin-lemaignan/vim-minimap'    " A Sublime-like minimap for VIM
+Plugin 'Shougo/vimproc.vim'               " Interactive command execution in Vim
+Plugin 'Shougo/vimshell.vim'              " Powerful shell implemented by vim
+Plugin 'sebdah/vim-delve'                 " Vim integration for Delve
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
