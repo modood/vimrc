@@ -276,6 +276,13 @@ au FileType go nmap <leader>d <Plug>(go-def)
 let g:go_def_mapping_enabled = 0
 " auto |:GoMetaLinter| on save
 let g:go_metalinter_autosave = 1
+" Specifies the enabled linters for auto |:GoMetaLinter| on save. By
+" default it's using `vet` and `golint`.
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+" Specifies the linters to enable for the |:GoMetaLinter| command. By default
+" it's using `vet`, `golint` and `errcheck`.
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+
 " [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)
 let g:go_list_type = 'locationlist'
 " syntax-highlighting for Functions, Methods and Structs
