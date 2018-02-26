@@ -339,3 +339,20 @@ let g:minimap_toggle='<C-c>mm'
 let g:minimap_show='<Nop>'
 let g:minimap_update='<Nop>'
 let g:minimap_close='<Nop>'
+
+" =========================================================
+" Configuration: Shougo/vimshell.vim
+" disable some default keys
+autocmd FileType vimshell call s:on_vimshell()
+function! s:on_vimshell()
+  unmap <buffer> q
+  unmap <buffer> <C-l>
+  unmap <buffer> <C-n>
+endfunction
+
+" =========================================================
+" Configuration: sebdah/vim-delve
+nmap <C-c>db :DlvToggleBreakpoint<cr>
+nmap <C-c>dc :DlvClearAll<cr>
+nmap <C-c>dt :DlvTest<cr>
+nmap <C-c>dd :DlvDebug --<space>
