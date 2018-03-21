@@ -1,0 +1,18 @@
+snippet func
+	// $1 ${2:...}
+	func ${1:FuncName}(${3}) {
+		${4}
+	}
+
+snippet fmtp
+	fmt.Println(${1})
+	${2}
+
+snippet ife
+	if err != nil {
+		${1:fmt.Println(err)}
+	}
+	${2}
+
+snippet tag
+	\`${1:json}:"${2:field}"\`
