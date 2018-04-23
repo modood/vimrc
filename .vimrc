@@ -271,7 +271,14 @@ nnoremap <C-c><C-c> :LAck!<Space>
 " Configuration: vim-go
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>t <Plug>(go-alternate-edit)
+au FileType go nmap <leader>s <Plug>(go-info)
 au FileType go nmap <leader>d <Plug>(go-def)
+au FileType go nmap <leader>f <Plug>(go-referrers)
+au FileType go nmap <leader>g <Plug>(go-implements)
+au FileType go nmap <leader>i :GoImpl<cr>
+au FileType go nmap <leader>o :GoDecls<cr>
+au FileType go nmap <leader>p :GoDeclsDir<cr>
 " disable <C-t> https://github.com/fatih/vim-go/issues/1202
 let g:go_def_mapping_enabled = 0
 " auto |:GoMetaLinter| on save

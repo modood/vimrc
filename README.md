@@ -58,10 +58,18 @@ $ ./deploy.sh
 | `<Leader>q` | Exit | - |
 | `<Leader>qq` | Write the current file and exit vim | - |
 | `<Leader>w` | Write the current file | - |
-| `<Leader>e`  | - | - |
-| `<Leader>r`  | Build and run current main package | vim-go |
-| `<Leader>tyuiopas`  | - | - |
-| `<Leader>d`  | Go to symbol/declaration | vim-go |
+| `<Leader>e` | - | - |
+| `<Leader>r` | Build and run current main package | vim-go |
+| `<Leader>t` | Alternates between the implementation and test code | vim-go |
+| `<Leader>yu` | - | - |
+| `<Leader>i` | implementing an interface | vim-go |
+| `<Leader>o` | Show declarations for the current file | vim-go |
+| `<Leader>p` | Show declarations for the current directory | vim-go |
+| `<Leader>a` | - | - |
+| `<Leader>s` | Show type information | vim-go |
+| `<Leader>d` | Go to symbol/declaration | vim-go |
+| `<Leader>f` | Shows identifiers that refer to the same object | vim-go |
+| `<Leader>g` | A list of interfaces for the type that implements | vim-go |
 | `<Leader>fg`  | - | - |
 | `<Leader>hl`  | Turn to previous/next of quickfix list | - |
 | `<Leader>kj`  | Turn to previous/next of location list | - |
