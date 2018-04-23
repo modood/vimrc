@@ -89,8 +89,15 @@ $ ./deploy.sh
 
 | key | description |
 |:----|:------------|
-| `<Leader>r`  | Build and run current main package |
-| `<Leader>d`  | Go to symbol/declaration |
+| `<Leader>r` | Build and run current main package |
+| `<Leader>t` | Alternates between the implementation and test code |
+| `<Leader>i` | implementing an interface |
+| `<Leader>o` | Show declarations for the current file |
+| `<Leader>p` | Show declarations for the current directory |
+| `<Leader>s` | Show type information |
+| `<Leader>d` | Go to symbol/declaration |
+| `<Leader>f` | Shows identifiers that refer to the same object |
+| `<Leader>g` | A list of interfaces for the type that implements |
 
 *   [vim-minimap](https://github.com/severin-lemaignan/vim-minimap)
 
