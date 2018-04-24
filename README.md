@@ -59,7 +59,7 @@ $ ./deploy.sh
 | `<Leader>qq` | Write the current file and exit vim | - |
 | `<Leader>w` | Write the current file | - |
 | `<Leader>e` | - | - |
-| `<Leader>r` | Build and run current main package | vim-go |
+| `<Leader>r` | Build and run current main package<br/>Rename the variable under the cursor | vim-go<br/>ternfor-vim |
 | `<Leader>t` | Alternates between the implementation and test code | vim-go |
 | `<Leader>yu` | - | - |
 | `<Leader>i` | implementing an interface | vim-go |
@@ -67,8 +67,8 @@ $ ./deploy.sh
 | `<Leader>p` | Show declarations for the current directory | vim-go |
 | `<Leader>a` | - | - |
 | `<Leader>s` | Show type information | vim-go |
-| `<Leader>d` | Go to symbol/declaration | vim-go |
-| `<Leader>f` | Shows identifiers that refer to the same object | vim-go |
+| `<Leader>d` | Go to symbol/declaration | vim-go<br/>tern-for-vim |
+| `<Leader>f` | Shows identifiers that refer to the same object | vim-go<br/>tern-for-vim |
 | `<Leader>g` | A list of interfaces for the type that implements | vim-go |
 | `<Leader>fg`  | - | - |
 | `<Leader>hl`  | Turn to previous/next of quickfix list | - |
@@ -98,6 +98,15 @@ $ ./deploy.sh
 | `<Leader>d` | Go to symbol/declaration |
 | `<Leader>f` | Shows identifiers that refer to the same object |
 | `<Leader>g` | A list of interfaces for the type that implements |
+
+*   [tern-for-vim](https://github.com/ternjs/tern_for_vim/)
+
+| key | description |
+|:----|:------------|
+| `<Leader>r` | Rename the variable under the cursor |
+| `<Leader>d` | Go to symbol/declaration |
+| `<Leader>f` | Shows identifiers that refer to the same object |
+
 
 *   [vim-minimap](https://github.com/severin-lemaignan/vim-minimap)
 
