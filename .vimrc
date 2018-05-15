@@ -184,7 +184,6 @@ Plugin 'severin-lemaignan/vim-minimap'    " A Sublime-like minimap for VIM
 Plugin 'Shougo/vimproc.vim'               " Interactive command execution in Vim
 Plugin 'Shougo/vimshell.vim'              " Powerful shell implemented by vim
 Plugin 'sebdah/vim-delve'                 " Vim integration for Delve
-Plugin 'ternjs/tern_for_vim'              " Tern plugin for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -364,11 +363,3 @@ nmap <C-c>db :DlvToggleBreakpoint<cr>
 nmap <C-c>dc :DlvClearAll<cr>
 nmap <C-c>dt :DlvTest<cr>
 nmap <C-c>dd :DlvDebug --<space>
-
-" =========================================================
-" Configuration: ternjs/tern_for_vim
-au FileType javascript nmap <leader>d :TernDef<cr>
-au FileType javascript nmap <leader>f :TernRefs<cr>
-au FileType javascript nmap <leader>r :TernRename<cr>
-let g:tern_show_signature_in_pum=1
-let g:tern_show_loc_after_rename=0
