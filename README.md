@@ -76,7 +76,9 @@ $ ./deploy.sh
 | `<Leader>zx`  | - | - |
 | `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
 | `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
-| `<Leader>vbnm`  | - | - |
+| `<Leader>v`  | - | - |
+| `<Leader>b`  | Git blame | vim-fugitive |
+| `<Leader>nm` | - | - |
 
 | key | description |
 |:----|:------------|

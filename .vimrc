@@ -184,6 +184,7 @@ Plugin 'severin-lemaignan/vim-minimap'    " A Sublime-like minimap for VIM
 Plugin 'Shougo/vimproc.vim'               " Interactive command execution in Vim
 Plugin 'Shougo/vimshell.vim'              " Powerful shell implemented by vim
 Plugin 'sebdah/vim-delve'                 " Vim integration for Delve
+Plugin 'tpope/vim-fugitive'               " A Git wrapper
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -363,3 +364,8 @@ nmap <C-c>db :DlvToggleBreakpoint<cr>
 nmap <C-c>dc :DlvClearAll<cr>
 nmap <C-c>dt :DlvTest<cr>
 nmap <C-c>dd :DlvDebug --<space>
+
+" =========================================================
+" Configuration: tpope/vim-fugitive
+nmap <leader>b :Gblame<CR>
+
