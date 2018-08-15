@@ -273,7 +273,7 @@ nnoremap <C-c><C-c> :LAck!<Space>
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-alternate-edit)
-au FileType go nmap <leader>s <Plug>(go-info)
+au FileType go nmap <leader>s <Plug>(go-callees)
 au FileType go nmap <leader>d <Plug>(go-def)
 au FileType go nmap <leader>f <Plug>(go-referrers)
 au FileType go nmap <leader>g <Plug>(go-implements)
@@ -290,6 +290,8 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 " Specifies the linters to enable for the |:GoMetaLinter| command. By default
 " it's using `vet`, `golint` and `errcheck`.
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+" Sets go_guru_scope to the entire workspace
+let g:go_guru_scope = ['...']
 
 " [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)
 let g:go_list_type = 'locationlist'
