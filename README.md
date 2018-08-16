@@ -27,7 +27,7 @@ $ ./deploy.sh
 |:----|:------------|:-------|
 | `<C-q>` | - | - |
 | `<C-w>hjkl` | moves between Vim viewports | - |
-| `<C-e>` | Scroll window [count] lines downwards | - |
+| `<C-e>` | Scroll window [count] lines downwards<br/>Cursor previous | -<br/>vim-multiple-cursors |
 | `<C-r>` | Redo changes | - |
 | `<C-t>` | New tab | - |
 | `<C-y>` | Scroll window [count] lines upwards | - |
