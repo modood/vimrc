@@ -185,6 +185,9 @@ Plugin 'Shougo/vimproc.vim'               " Interactive command execution in Vim
 Plugin 'Shougo/vimshell.vim'              " Powerful shell implemented by vim
 Plugin 'sebdah/vim-delve'                 " Vim integration for Delve
 Plugin 'tpope/vim-fugitive'               " A Git wrapper
+Plugin 'vim-airline/vim-airline'          " lean & mean status/tabline for vim that's light as air
+Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airline
+Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -243,6 +246,7 @@ let g:syntastic_style_warning_symbol = '⚠'
 " Error highlighting
 highlight SyntasticError ctermbg=Red ctermfg=White
 highlight SyntasticWarning ctermbg=Yellow ctermfg=Blue
+highlight Search ctermbg=White ctermfg=Black
 
 " =========================================================
 " Configuration: terryma/vim-expand-region
@@ -371,3 +375,10 @@ nmap <C-c>dd :DlvDebug --<space>
 " Configuration: tpope/vim-fugitive
 nmap <leader>b :Gblame<CR>
 
+" =========================================================
+" Configuration: vim-airline/vim-airline-themes
+let g:airline_theme='term'
+
+" =========================================================
+" Configuration: dhruvasagar/vim-table-mode
+let g:table_mode_corner='|'
