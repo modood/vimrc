@@ -12,6 +12,17 @@ $ ./deploy.sh
 
 ## keyboard shortcuts overview
 
+### Normal
+
+| key | description | plugin |
+|:----|:------------|:-------|
+| `<esc><esc><esc><esc>` | reset all error checking: <br/>1.  stop the highlighting<br/>2.  close locationlist<br/>3.  reset syntastic | - |
+| `:w!!` | sudo & write a file | - |
+| `<v>` | expand region expand | vim-expand-region |
+| `<s>` | s{char} to move to {char} | vim-easymotion |
+
+### Ctrl
+
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<C-q>` | - | - |
@@ -39,6 +50,8 @@ $ ./deploy.sh
 | `<C-m>` | `<cr>` | **do not edit** |
 | `<C-;>` | Show clipboard | Ubuntu |
 
+### Ctrl + c
+
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<C-c><C-c>` | Open Ack | ack.vim |
@@ -51,7 +64,9 @@ $ ./deploy.sh
 | `<C-c>dt` | debug non-main packages | vim-delve |
 | `<C-c>dd` | debug main package | vim-delve |
 | `<C-c>n` | tabnext | - |
-| `<C-c>mm` | toggle the minimap | - |
+| `<C-c>mm` | toggle the minimap | vim-minimap |
+
+### Leader
 
 | key | description | plugin |
 |:----|:------------|:-------|
@@ -61,6 +76,8 @@ $ ./deploy.sh
 | `<Leader>e` | - | - |
 | `<Leader>r` | Build and run current main package | vim-go |
 | `<Leader>t` | Alternates between the implementation and test code | vim-go |
+| `<Leader>tt`| Formatting existing content into a table | vim-table-mode |
+| `<Leader>tm`| enable / disable table mode | vim-table-mode |
 | `<Leader>yu` | - | - |
 | `<Leader>i` | implementing an interface | vim-go |
 | `<Leader>o` | Show declarations for the current file | vim-go |
@@ -79,90 +96,28 @@ $ ./deploy.sh
 | `<Leader>b`  | Git blame | vim-fugitive |
 | `<Leader>nm` | - | - |
 
-| key | description |
-|:----|:------------|
-| `<esc><esc><esc><esc>` | reset all error checking: <br/>1.  stop the highlighting<br/>2.  close locationlist<br/>3.  reset syntastic |
-| `:w!!` | sudo & write a file |
-
-## keyboard shortcuts
-
-*   [vim-go](https://github.com/fatih/vim-go)
+### Plugin: nerdtree
 
 | key | description |
 |:----|:------------|
-| `<Leader>r` | Build and run current main package |
-| `<Leader>t` | Alternates between the implementation and test code |
-| `<Leader>i` | implementing an interface |
-| `<Leader>o` | Show declarations for the current file |
-| `<Leader>p` | Show declarations for the current directory |
-| `<Leader>s` | Show type information |
-| `<Leader>d` | Go to symbol/declaration |
-| `<Leader>f` | Shows identifiers that refer to the same object |
-| `<Leader>g` | A list of interfaces for the type that implements |
-
-*   [vim-minimap](https://github.com/severin-lemaignan/vim-minimap)
-
-| key | description |
-|:----|:------------|
-| `<C-c>mm` | toggle the minimap |
-
-*   [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-
-| key | description |
-|:----|:------------|
-| `[count]<leader>cs` | Comments out the selected lines |
-| `[count]<leader>c<space>` | Toggles the comment state of the selected line(s) |
-
-*   [nerdtree](https://github.com/scrooloose/nerdtree)
-
-| key | description |
-|:----|:------------|
-| `<C-n>` | Toggle |
-| `<C-f>` | Find the current file in the tree |
-| `?`     | Got help |
+| `?`   | Got help |
 | `<I>` | Show hidden files |
 | `<A>` | Zoom the nerdtree window |
 
-*   [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+### Plugin: ctrlp.vim
 
 | key | description |
 |:----|:------------|
-| `<C-g>` | cursor next |
-| `<C-x>` | cursor skip |
-
-*   [tagbar](https://github.com/majutsushi/tagbar)
-
-| key | description |
-|:----|:------------|
-| `<C-b>` | TagbarToggle |
-
-*   [ctrlp.vim](https://github.com/kien/ctrlp.vim)
-
-| key | description |
-|:----|:------------|
-| `<C-p>`         | Invoke CtrlP in find file mode |
-| CtrlP: `<c-fb>` | Cycle between modes |
-| CtrlP: `<c-d>`  | switch to filename only search instead of full path |
-| CtrlP: `<c-r>`  | switch to regexp mode |
-| CtrlP: `<c-jk>` | navigate the result list |
-| CtrlP: `<c-t>`  | open the selected entry in a new tab |
-| CtrlP: `<c-v>`  | open the selected entry in a new split |
-| CtrlP: `<c-x>`  | open the selected entry in a new split |
-| CtrlP: `<c-y>`  | create a new file and its parent directories |
-| CtrlP: `<c-z>`  | mark/unmark multiple files and <c-o> to open them |
-| CtrlP: `<F5>`   | Refresh the match window and purge the cache for the current directory |
-
-*   [vim-expand-region](https://github.com/terryma/vim-expand-region)
-
-| key | description |
-|:----|:------------|
-| `<v>` | expand region expand |
-
-*   [vim-easymotion](https://github.com/easymotion/vim-easymotion)
-
-| key | description |
-|:----|:------------|
-| `<s>` | s{char} to move to {char} |
+| `<c-fb>` | Cycle between modes |
+| `<c-d>`  | switch to filename only search instead of full path |
+| `<c-r>`  | switch to regexp mode |
+| `<c-jk>` | navigate the result list |
+| `<c-t>`  | open the selected entry in a new tab |
+| `<c-v>`  | open the selected entry in a new split |
+| `<c-x>`  | open the selected entry in a new split |
+| `<c-y>`  | create a new file and its parent directories |
+| `<c-z>`  | mark/unmark multiple files and <c-o> to open them |
+| `<F5>`   | Refresh the match window and purge the cache for the current directory |
 
 ## contributing
 1. Fork it
