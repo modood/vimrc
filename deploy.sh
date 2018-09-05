@@ -6,20 +6,32 @@
   exit 1;
 }
 
-vundle=~/.vim/bundle/Vundle.vim
+bundle=$HOME/.vim/bundle
+vundle=$bundle/Vundle.vim
 
 # Download "VundleVim/Vundle.vim" Vim Plugin Manager
-if [ ! -d "$vundle" ]; then
-  git clone https://github.com/VundleVim/Vundle.vim.git "$vundle"
+if [ ! -d $vundle ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git $vundle
 fi
 
-cp .vimrc ~/
-cp .eslintrc.js ~/
+# Compile "Shougo/vimproc.vim" manually
+if [ ! -f $bundle/vimproc.vim/lib/*.so ]; then
+  CURRENT_DIR=$PWD
+  cd $bundle/vimproc.vim && make > /dev/null
+  cd $CURRENT_DIR
+fi
+
+# Copy dotfiles
+dotfiles=(
+  .vimrc
+  .eslintrc.js
+)
+cp ${dotfiles[@]} $HOME
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
 vim +PluginInstall +GoInstallBinaries +qall
 
-cp -rf snippets/* ~/.vim/bundle/snipmate.vim/snippets
+cp -rf snippets/* $bundle/snipmate.vim/snippets
 
 # install npm dependencies
 command -v eslint >/dev/null 2>&1 || npm install -g eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
