@@ -188,6 +188,7 @@ Plugin 'tpope/vim-fugitive'               " A Git wrapper
 Plugin 'vim-airline/vim-airline'          " lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airline
 Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
+Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
