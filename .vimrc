@@ -140,6 +140,9 @@ inoremap ' ''<ESC>i
 inoremap （ （）<ESC>i
 inoremap 【 【】<ESC>i
 
+" Autocompletion
+inoremap .<tab> .<C-x><C-o>
+
 " Leader
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
