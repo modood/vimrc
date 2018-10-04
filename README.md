@@ -81,7 +81,7 @@ $ ./deploy.sh
 | `<Leader>yu` | - | - |
 | `<Leader>i` | implementing an interface | vim-go |
 | `<Leader>o` | Show declarations for the current file | vim-go |
-| `<Leader>p` | Show declarations for the current directory | vim-go |
+| `<Leader>p` | Show declarations for the current directory<br/>markdown preview | vim-go<br/>vim-instant-markdown |
 | `<Leader>a` | - | - |
 | `<Leader>s` | Show A list of possible call targets | vim-go |
 | `<Leader>d` | Go to symbol/declaration | vim-go |

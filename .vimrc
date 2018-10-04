@@ -394,3 +394,7 @@ let g:airline_theme='term'
 " =========================================================
 " Configuration: dhruvasagar/vim-table-mode
 let g:table_mode_corner='|'
+
+" Configuration: suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0
+au FileType markdown nmap <leader>p :InstantMarkdownPreview<cr>
