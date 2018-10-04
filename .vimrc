@@ -147,7 +147,6 @@ inoremap .<tab> .<C-x><C-o>
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>qq :NERDTreeClose<CR>:wq<CR>
 
 " turn to next or previous errors, after open location list
 nmap <leader>j :lnext<CR>
@@ -349,6 +348,14 @@ let g:tagbar_type_go = {
     \ },
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
+\ }
+
+let g:tagbar_type_markdown = {
+        \ 'ctagstype' : 'markdown',
+        \ 'kinds' : [
+                \ 'h:headings',
+        \ ],
+    \ 'sort' : 0
 \ }
 
 " =========================================================
