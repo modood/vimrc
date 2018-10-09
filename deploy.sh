@@ -35,5 +35,5 @@ cp -rf snippets/* $bundle/snipmate.vim/snippets
 
 # install npm dependencies
 command -v eslint >/dev/null 2>&1 || npm install -g eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
-command -v instant-markdown-d >/dev/null 2>&1 || npm install -g instant-markdown-d
+command -v instant-markdown-d >/dev/null 2>&1 || npm install -g https://github.com/mwnf/instant-markdown-d.git
 
