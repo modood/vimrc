@@ -80,7 +80,7 @@ $ ./deploy.sh
 | `<Leader>tm`| enable / disable table mode | vim-table-mode |
 | `<Leader>yu` | - | - |
 | `<Leader>i` | implementing an interface | vim-go |
-| `<Leader>o` | Show declarations for the current file | vim-go |
+| `<Leader>o` | Show declarations for the current file<br/>Generate table of contents for markdown | vim-go<br/>vim-markdown-toc |
 | `<Leader>p` | Show declarations for the current directory<br/>markdown preview | vim-go<br/>vim-instant-markdown |
 | `<Leader>a` | - | - |
 | `<Leader>s` | Show A list of possible call targets | vim-go |

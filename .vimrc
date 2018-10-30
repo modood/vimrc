@@ -172,6 +172,7 @@ Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file, buffer, mru, tag, etc fi
 Plugin 'Shougo/neocomplcache.vim'         " Ultimate auto-completion system for Vim.
 Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
 Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
+Plugin 'mzlogin/vim-markdown-toc'         " Generate table of contents for Markdown files
 Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
@@ -398,3 +399,6 @@ let g:table_mode_corner='|'
 " Configuration: suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 au FileType markdown nmap <leader>p :InstantMarkdownPreview<cr>
+
+" Configuration: mzlogin/vim-markdown-toc
+au FileType markdown nmap <leader>o :GenTocGFM<cr>
