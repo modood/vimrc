@@ -300,7 +300,7 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 " it's using `vet`, `golint` and `errcheck`.
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 " Sets go_guru_scope to the entire workspace
-let g:go_guru_scope = ['...']
+let g:go_guru_scope = [substitute(getcwd().'/...', $GOPATH."/src/", "", "")]
 
 " [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)
 let g:go_list_type = 'locationlist'
