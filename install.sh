@@ -31,7 +31,7 @@ dotfiles=(
 for i in ${dotfiles[@]}; do curl -L $repo/$i > $HOME/$i; done
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
-vim +PluginInstall +GoInstallBinaries +qall
+vim +PluginInstall +GoInstallBinaries +qall < /dev/tty
 
 # Copy snippets
 snippets=(
