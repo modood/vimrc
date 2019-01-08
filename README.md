@@ -76,7 +76,8 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<Leader>t` | Alternates between the implementation and test code | vim-go |
 | `<Leader>tt`| Formatting existing content into a table | vim-table-mode |
 | `<Leader>tm`| enable / disable table mode | vim-table-mode |
-| `<Leader>yu` | - | - |
+| `<Leader>y` | Chinese copywriting guidelines for better written communication | hotoo/pangu.vim |
+| `<Leader>u` | - | - |
 | `<Leader>i` | implementing an interface | vim-go |
 | `<Leader>o` | Show declarations for the current file<br/>Generate table of contents for markdown | vim-go<br/>vim-markdown-toc |
 | `<Leader>p` | Show declarations for the current directory<br/>markdown preview | vim-go<br/>vim-instant-markdown |

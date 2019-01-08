@@ -192,6 +192,7 @@ Plugin 'vim-airline/vim-airline'          " lean & mean status/tabline for vim t
 Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airline
 Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
+Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -396,9 +397,15 @@ let g:airline_theme='term'
 " Configuration: dhruvasagar/vim-table-mode
 let g:table_mode_corner='|'
 
+" =========================================================
 " Configuration: suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 au FileType markdown nmap <leader>p :InstantMarkdownPreview<cr>
 
+" =========================================================
 " Configuration: mzlogin/vim-markdown-toc
 au FileType markdown nmap <leader>o :GenTocGFM<cr>
+
+" =========================================================
+" Configuration: hotoo/pangu.vim
+au FileType markdown nmap <leader>y :Pangu<cr>
