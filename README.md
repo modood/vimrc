@@ -88,6 +88,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<Leader>g` | A list of interfaces for the type that implements | vim-go |
 | `<Leader>hl`  | Turn to previous/next of quickfix list | - |
 | `<Leader>kj`  | Turn to previous/next of location list | - |
+| `<Leader>-=`  | Resize the width of the current window | - |
 | `<Leader>zx`  | - | - |
 | `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
 | `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |

@@ -141,7 +141,7 @@ inoremap （ （）<ESC>i
 inoremap 【 【】<ESC>i
 
 " Autocompletion
-inoremap .<tab> .<C-x><C-o>
+"inoremap .<tab> .<C-x><C-o>
 
 " Leader
 let mapleader = "\<Space>"
@@ -155,6 +155,8 @@ nmap <leader>k :lprevious<CR>
 " turn to next or previous errors, after open quickfix list
 nmap <leader>l :cnext<CR>
 nmap <leader>h :cprevious<CR>
+nmap <leader>- :vertical resize -2<CR>
+nmap <leader>= :vertical resize +2<CR>
 
 " reset all error checking: Stop the highlighting, close locationlist, reset syntastic
 noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>:SyntasticReset<cr>
