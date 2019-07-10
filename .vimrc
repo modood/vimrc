@@ -67,9 +67,6 @@ fun! ToggleFold()
     endif
 endfun
 
-" Show a tab
-"set list lcs=tab:——          " listchars
-
 " Turn backup off
 set nobk                      " nobackup
 set nowb                      " nowritebackup
@@ -80,12 +77,14 @@ set ls=2                      " laststatus
 set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statusline
 
 " Filetype
-autocmd BufRead,BufNewFile *.vue set filetype=xhtml
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost * if &filetype == "" | setlocal filetype=text | endif
 
-" Set tabstop shiftwidth expandtab
-autocmd FileType *  set ts=2 | set sw=2 | set et
-autocmd FileType go set ts=4 | set sw=4 | set noet
+" Set tabstop shiftwidth expandtab listchars
+autocmd FileType * set ts=2 | set sw=2 | set et
+autocmd FileType go,make set noet
+autocmd FileType go,proto,markdown set ts=4 | set sw=4
+autocmd FileType text,markdown,proto,make set list lcs=tab:——
 
 " Leave the cursor at center of window
 nnoremap n nzz
