@@ -81,10 +81,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost * if &filetype == "" | setlocal filetype=text | endif
 
 " Set tabstop shiftwidth expandtab listchars
-autocmd FileType * set ts=2 | set sw=2 | set et
-autocmd FileType go,make set noet
-autocmd FileType go,proto,markdown set ts=4 | set sw=4
-autocmd FileType text,markdown,proto,make set list lcs=tab:——
+autocmd FileType * set ts=2 | set sw=2 | set et | set lcs=tab:—— | set list
+autocmd FileType go,make set noet | set nolist
+autocmd FileType go,make,proto,markdown set ts=4 | set sw=4
 
 " Leave the cursor at center of window
 nnoremap n nzz
