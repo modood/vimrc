@@ -286,7 +286,7 @@ nnoremap <C-c><C-c> :LAck!<Space>
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-alternate-edit)
-au FileType go nmap <leader>s <Plug>(go-callees)
+au FileType go nmap <leader>s <Plug>(go-info)
 au FileType go nmap <leader>d <Plug>(go-def)
 au FileType go nmap <leader>f <Plug>(go-referrers)
 au FileType go nmap <leader>g <Plug>(go-implements)
