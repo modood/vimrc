@@ -193,6 +193,7 @@ Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airli
 Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
+Plugin 'fidian/hexmode'                   " Vim plugin to edit binary files in a hex mode automatically.
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
