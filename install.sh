@@ -16,13 +16,6 @@ if [ ! -d $vundle ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git $vundle
 fi
 
-# Compile "Shougo/vimproc.vim" manually
-if [ ! -f $bundle/vimproc.vim/lib/*.so ]; then
-  CURRENT_DIR=$PWD
-  cd $bundle/vimproc.vim && make > /dev/null
-  cd $CURRENT_DIR
-fi
-
 # Copy dotfiles
 dotfiles=(
   .vimrc
@@ -32,6 +25,13 @@ for i in ${dotfiles[@]}; do curl -L $repo/$i > $HOME/$i; done
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
 vim +PluginInstall +GoInstallBinaries +qall < /dev/tty
+
+# Compile "Shougo/vimproc.vim" manually
+if [ ! -f $bundle/vimproc.vim/lib/*.so ]; then
+  CURRENT_DIR=$PWD
+  cd $bundle/vimproc.vim && make > /dev/null
+  cd $CURRENT_DIR
+fi
 
 # Copy snippets
 snippets=(
