@@ -71,7 +71,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<Leader>q` | Exit | - |
 | `<Leader>qq` | Write the current file and exit vim | - |
 | `<Leader>w` | Write the current file | - |
-| `<Leader>e`  | GoFillStruct | vim-go |
+| `<Leader>e`  | GoDiagnostics | vim-go |
 | `<Leader>r` | Build and run current main package | vim-go |
 | `<Leader>t` | Alternates between the implementation and test code | vim-go |
 | `<Leader>tt`| Formatting existing content into a table | vim-table-mode |
@@ -93,7 +93,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<Leader>n` | GoRemoveTags and GoAddTags | vim-go |
 | `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
 | `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
-| `<Leader>v`  | - | - |
+| `<Leader>v`  | GoFillStruct | vim-go |
 | `<Leader>b`  | Git blame | vim-fugitive |
 | `<Leader>n` | GoRemoveTags and GoAddTags | vim-go |
 | `<Leader>m` | GoMetaLinter | vim-go |

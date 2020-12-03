@@ -258,13 +258,21 @@ au FileType go nmap <leader>m <Plug>(go-metalinter)
 au FileType go nmap <leader>i :GoImpl<cr>
 au FileType go nmap <leader>o :GoDecls<cr>
 au FileType go nmap <leader>p :GoDeclsDir<cr>
-au FileType go nmap <leader>e :GoFillStruct<cr>
+au FileType go nmap <leader>v :GoFillStruct<cr>
+au FileType go nmap <leader>e :GoDiagnostics<cr>
 au FileType go nmap <leader>n :GoRemoveTags<CR>:GoAddTags toml<CR>
 
 " disable <C-t> https://github.com/fatih/vim-go/issues/1202
 let g:go_def_mapping_enabled = 0
+
+" Specifies the `gopls` diagnostics level. Valid values are 0, 1, and 2. 0
+" ignores `gopls` diagnostics, 1 is for errors only, and 2 is for errors and
+" warnings. By default it is 0.
+let g:go_diagnostics_level = 2
+
 " auto |:GoMetaLinter| on save
 let g:go_metalinter_autosave = 0
+
 " the command to be executed when |:GoMetaLinter| is called
 let g:go_metalinter_command = "golangci-lint"
 " Specifies the enabled linters for auto |:GoMetaLinter| on save. By
