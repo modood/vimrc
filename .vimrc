@@ -250,35 +250,41 @@ nnoremap <C-c><C-c> :LAck!<Space>
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-alternate-edit)
-au FileType go nmap <leader>s <Plug>(go-info)
+au FileType go nmap <leader>s <Plug>(go-callees)
 au FileType go nmap <leader>d <Plug>(go-def)
 au FileType go nmap <leader>f <Plug>(go-referrers)
 au FileType go nmap <leader>g <Plug>(go-implements)
+au FileType go nmap <leader>m <Plug>(go-metalinter)
 au FileType go nmap <leader>i :GoImpl<cr>
 au FileType go nmap <leader>o :GoDecls<cr>
 au FileType go nmap <leader>p :GoDeclsDir<cr>
+au FileType go nmap <leader>e :GoFillStruct<cr>
+au FileType go nmap <leader>n :GoRemoveTags<CR>:GoAddTags toml<CR>
+
 " disable <C-t> https://github.com/fatih/vim-go/issues/1202
 let g:go_def_mapping_enabled = 0
 " auto |:GoMetaLinter| on save
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
+" the command to be executed when |:GoMetaLinter| is called
+let g:go_metalinter_command = "golangci-lint"
 " Specifies the enabled linters for auto |:GoMetaLinter| on save. By
 " default it's using `vet` and `golint`.
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['unconvert', 'megacheck', 'structcheck', 'gas', 'dupl', 'misspell', 'unparam', 'varcheck', 'typecheck', 'ineffassign', 'varcheck', 'gochecknoinits', 'gocritic', 'gofmt', 'gofumpt', 'goimports' ]
 " Specifies the linters to enable for the |:GoMetaLinter| command. By default
 " it's using `vet`, `golint` and `errcheck`.
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['unconvert', 'megacheck', 'structcheck', 'gas', 'dupl', 'misspell', 'unparam', 'varcheck', 'typecheck', 'ineffassign', 'varcheck', 'gochecknoinits', 'gocritic', 'gofmt', 'gofumpt', 'goimports' ]
 " Sets go_guru_scope to the entire workspace
-let g:go_guru_scope = [substitute(getcwd().'/...', $GOPATH."/src/", "", "")]
+let g:go_guru_scope = []
 
 " [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)
 let g:go_list_type = 'locationlist'
 " syntax-highlighting for Functions, Methods and Structs
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1
-let g:go_highlight_operators = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_function_parameters = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_format_strings = 1
+
 " auto fmt on save
 let g:go_fmt_autosave = 1
 " Enable goimports to automatically insert import paths instead of gofmt
@@ -286,7 +292,7 @@ let g:go_fmt_command = "goimports"
 " Use this option to define the command to be used for |:GoDef|. By default
 " `guru` is being used as it covers all edge cases. But one might also use
 " `godef` as it's faster. Current valid options are: `[guru, godef]` >
-let g:go_def_mode = 'godef'
+let g:go_def_mode = 'gopls'
 
 " =========================================================
 " Configuration: majutsushi/tagbar
