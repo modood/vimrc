@@ -40,6 +40,7 @@ snippets=(
   snippets/javascript.snippets
 )
 for i in ${snippets[@]}; do curl -L $repo/$i > $bundle/snipmate.vim/$i; done
+curl -L $repo/plugins/yank_mapping.vim > $bundle/snipmate.vim/nerdtree/plugin/yank_mapping.vim
 
 # install npm dependencies
 command -v eslint >/dev/null 2>&1 || npm install -g eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
