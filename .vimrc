@@ -9,9 +9,11 @@ set hls                       " hlsearch
 set nowrap                    " nowrap
 set ww=h,l                    " whichwrap
 set enc=utf-8                 " encoding
+set fencs=utf-8,gbk,gb2312,gb18030    " fileencodings
 set pt=<F3>                   " pastetoggle
 set mouse=a                   " mouse
 set ff=dos                    " fileformat
+set mmp=10240                 " maxmempattern
 
 " Number
 set nu                        " number
