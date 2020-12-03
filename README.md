@@ -29,13 +29,13 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<C-r>` | Redo changes | - |
 | `<C-t>` | New tab | - |
 | `<C-y>` | Scroll window [count] lines upwards | - |
-| `<C-u>` | Scroll window upwards | scroll.vim |
+| `<C-u>` | Scroll window upwards | - |
 | `<C-i>` | `<tab>` | **do not edit** |
 | `<C-o>` | Jump back to the previous location | - |
 | `<C-p>` | Open CtrlP | ctrlp.vim |
 | `<C-a>` | Select all contents of the file | - |
 | `<C-s>` | Tmux prefix key | tmux |
-| `<C-d>` | Scroll window Downwards | scroll.vim |
+| `<C-d>` | Scroll window Downwards | - |
 | `<C-f>` | Find the current file in the tree | nerdtree |
 | `<C-g>` | Cursor next | vim-multiple-cursors |
 | `<C-hjkl>` | moves between Vim viewports | vim and tmux |
