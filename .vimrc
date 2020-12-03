@@ -144,18 +144,16 @@ nmap <leader>h :cprevious<CR>
 nmap <leader>- :vertical resize -2<CR>
 nmap <leader>= :vertical resize +2<CR>
 
-" reset all error checking: Stop the highlighting, close locationlist, reset syntastic
-noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>:SyntasticReset<cr>
+" reset all error checking: Stop the highlighting, close locationlist
+noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>
 
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
 call vundle#begin('~/.vim/bundle')        " Specify a directory for plugins: begin('~/some/path/here')
 
 Plugin 'VundleVim/Vundle.vim'             " let Vundle manage Vundle, required
-Plugin 'pangloss/vim-javascript'          " Vastly improved Javascript indentation and syntax support in Vim.
 Plugin 'scrooloose/nerdtree'              " A tree explorer plugin for vim.
 Plugin 'msanders/snipmate.vim'            " implements some of TextMate's snippets features in Vim.
-Plugin 'scrooloose/syntastic'             " Syntax checking hacks for vim.
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'Shougo/neocomplcache.vim'         " Ultimate auto-completion system for Vim.
 Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
@@ -219,29 +217,6 @@ let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
-
-" =========================================================
-" Configuration: syntastic
-" show list of errors and warnings on the current file
-" xnmap <leader>e :Errors<CR>
-" check also when just write the file
-let g:syntastic_check_on_wq = 1
-let g:syntastic_check_on_open = 0
-" automatically opened when errors are detected, and closed when none are detected
-let g:syntastic_auto_loc_list = 1
-" syntastic checker for javascript
-let g:syntastic_javascript_checkers = ['eslint']
-" don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 1
-" custom icons (enable them if you use a patched font, and enable the previous setting)
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-" Error highlighting
-highlight SyntasticError ctermbg=Red ctermfg=White
-highlight SyntasticWarning ctermbg=Yellow ctermfg=Blue
-highlight Search ctermbg=White ctermfg=Black
 
 " =========================================================
 " Configuration: terryma/vim-expand-region
