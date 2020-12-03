@@ -87,8 +87,6 @@ autocmd FileType go,make,proto,markdown set ts=4 | set sw=4
 
 " Leave the cursor at center of window
 nnoremap n nzz
-map <C-d> <C-d>zz
-map <C-u> <C-u>zz
 map <C-o> <C-o>zz
 
 " Smart way to move
@@ -184,6 +182,7 @@ Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table cre
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
 Plugin 'fidian/hexmode'                   " Vim plugin to edit binary files in a hex mode automatically.
+Plugin 'mg979/scroll.vim'                 " smooth scroll for vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -398,6 +397,14 @@ au FileType markdown nmap <leader>p :InstantMarkdownPreview<cr>
 " =========================================================
 " Configuration: mzlogin/vim-markdown-toc
 au FileType markdown nmap <leader>o :GenTocGFM<cr>
+
+" =========================================================
+" Configuration: mg979/scroll.vim
+let g:scroll_smoothness=15
+let g:scroll_no_mappings=1
+nmap zz <Plug>scroll_center
+nmap <C-d> <Plug>scroll_half_down
+nmap <C-u> <Plug>scroll_half_up
 
 " =========================================================
 " Configuration: hotoo/pangu.vim
