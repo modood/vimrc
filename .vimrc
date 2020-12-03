@@ -128,16 +128,6 @@ vmap <s-tab> <gv
 " Convenient ESC
 inoremap jj <Esc>
 
-" Automatic double quotes,parenthesis etc
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
-inoremap （ （）<ESC>i
-inoremap 【 【】<ESC>i
-
 " Autocompletion
 "inoremap .<tab> .<C-x><C-o>
 
