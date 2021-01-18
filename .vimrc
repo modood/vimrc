@@ -136,7 +136,7 @@ inoremap jj <Esc>
 " Leader
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :FloatermKill<CR>:q<CR>
 
 " turn to next or previous errors, after open location list
 nmap <leader>j :lnext<CR>
@@ -182,6 +182,7 @@ Plugin 'vim-airline/vim-airline'          " lean & mean status/tabline for vim t
 Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airline
 Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
+Plugin 'voldikss/vim-floaterm'            " Terminal manager for (neo)vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
 Plugin 'fidian/hexmode'                   " Vim plugin to edit binary files in a hex mode automatically.
 
@@ -262,7 +263,7 @@ au FileType go nmap <leader>i :GoImpl<cr>
 au FileType go nmap <leader>o :GoDecls<cr>
 au FileType go nmap <leader>p :GoDeclsDir<cr>
 au FileType go nmap <leader>v :GoFillStruct<cr>
-au FileType go nmap <leader>e :GoDiagnostics<cr>
+au FileType go nmap <leader>e :GoDiagnostics!<cr>
 au FileType go nmap <leader>n :GoRemoveTags<CR>:GoAddTags toml<CR>
 
 " disable <C-t> https://github.com/fatih/vim-go/issues/1202
@@ -393,3 +394,7 @@ au FileType markdown nmap <leader>o :GenTocGFM<cr>
 " =========================================================
 " Configuration: hotoo/pangu.vim
 au FileType markdown nmap <leader>y :Pangu<cr>
+
+" Configuration floaterm
+nnoremap <C-q> :silent! FloatermToggle<CR>
+tnoremap <C-q> <C-\><C-n>:FloatermToggle<CR>

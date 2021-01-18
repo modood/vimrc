@@ -23,7 +23,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 
 | key | description | plugin |
 |:----|:------------|:-------|
-| `<C-q>` | - | - |
+| `<C-q>` | Open or hide the floaterm window | vim-floaterm |
 | `<C-w>hjkl` | moves between Vim viewports | - |
 | `<C-e>` | Scroll window [count] lines downwards<br/>Cursor previous | -<br/>vim-multiple-cursors |
 | `<C-r>` | Redo changes | - |
