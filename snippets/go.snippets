@@ -3,16 +3,45 @@ snippet func
 	func ${1:FuncName}(${3}) {
 		${4}
 	}
-
-snippet fmtp
-	fmt.Println(${1})
-	${2}
-
 snippet ife
 	if err != nil {
-		${1:fmt.Println(err)}
+		${1:return err}
 	}
 	${2}
+snippet jsonm
+	${1:bytes}, err := ${2:json}.Marshal(${3:object})
+	if err != nil {
+		${4:return err}
+	}
+	${5}
+snippet jsonu
+	if err ${1::}= ${2:json}.Unmarshal(${3:object}, ${4:bytes}); err != nil {
+		${5:return err}
+	}
+	${6}
+snippet makem
+	${1:variable} := make(map[${2:string}]${3:string}, ${4:0})
+	${5}
+snippet makec
+	${1:variable} := make(chan ${2:struct{}}, ${3:0})
+	${4}
+snippet timef
+	${1:variable} := ${2:time.Now()}.Format(${3:time.RFC3339})
+	${4}
+snippet range
+	for ${1:_}, ${2:v} := range ${3:object} {
+		${4:fmt.Println(v)}
+	}
+	${5}
+snippet r
+	return ${1:nil}
+	${2}
+snippet p
+	fmt.Println(${1:v})
+	${2}
+snippet go
+	go func() {
+		${1}
+	}()
+	${2}
 
-snippet tag
-	\`${1:json}:"${2:field}"\`
