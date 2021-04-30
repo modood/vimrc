@@ -18,6 +18,8 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `:w!!` | sudo & write a file | - |
 | `<v>` | expand region expand | vim-expand-region |
 | `<s>` | s{char} to move to {char} | vim-easymotion |
+| `<Z>` | toggle zoom or restore window | - |
+| `<M>` | toggle rnu or nornu | - |
 
 ### Ctrl
 
@@ -41,38 +43,25 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<C-hjkl>` | moves between Vim viewports | vim and tmux |
 | `<C-z>` | Suspend | - |
 | `<C-x>` | Cursor skip | vim-multiple-cursors |
-| `<C-c>` | [N] Use as a prefix key<br/>[V] Copy selected text | -<br/>gvim |
+| `<C-c>` | [V] Copy selected text | gvim |
 | `<C-v>` | [N] Switch to [VB] mode<br/>[I] Paste | -<br/>gvim |
 | `<C-b>` | Toggle tagbar | tagbar |
 | `<C-n>` | Toggle Terdtree | nerdtree |
 | `<C-m>` | `<cr>` | **do not edit** |
 | `<C-;>` | Show clipboard | Ubuntu |
 
-### Ctrl + c
-
-| key | description | plugin |
-|:----|:------------|:-------|
-| `<C-c><C-c>` | Open Ack | ack.vim |
-| `<C-c>c` | toggle rnu or nornu | - |
-| `<C-c>z` | toggle zoom or restore window | - |
-| `<C-c>db` | toggle (add or remove) a breakpoint | vim-delve |
-| `<C-c>dc` | clear all the breakpoints and tracepoints | vim-delve |
-| `<C-c>dt` | debug non-main packages | vim-delve |
-| `<C-c>dd` | debug main package | vim-delve |
-| `<C-c>n` | tabnext | - |
-| `<C-c>mm` | toggle the minimap | vim-minimap |
-
 ### Leader
 
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<Leader>q` | Exit | - |
-| `<Leader>qq` | Write the current file and exit vim | - |
 | `<Leader>w` | Write the current file | - |
 | `<Leader>e`  | GoDiagnostics | vim-go |
 | `<Leader>r` | Build and run current main package | vim-go |
-| `<Leader>t` | Alternates between the implementation and test code | vim-go |
-| `<Leader>tt`| Formatting existing content into a table | vim-table-mode |
+| `<Leader>tr` | debug main package | vim-delve |
+| `<Leader>tt` | debug non-main packages | vim-delve |
+| `<Leader>tb` | toggle (add or remove) a breakpoint | vim-delve |
+| `<Leader>tc` | clear all the breakpoints and tracepoints | vim-delve |
 | `<Leader>tm`| enable / disable table mode | vim-table-mode |
 | `<Leader>y` | Chinese copywriting guidelines for better written communication | hotoo/pangu.vim |
 | `<Leader>u` | - | - |
@@ -87,7 +76,8 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<Leader>hl`  | Turn to previous/next of quickfix list | - |
 | `<Leader>kj`  | Turn to previous/next of location list | - |
 | `<Leader>-=`  | Resize the width of the current window | - |
-| `<Leader>zx`  | - | - |
+| `<Leader>z`  | read git commit message | - |
+| `<Leader>x`  | - | - |
 | `<Leader>n` | GoRemoveTags and GoAddTags | vim-go |
 | `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
 | `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
@@ -95,6 +85,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<Leader>b`  | Git blame | vim-fugitive |
 | `<Leader>n` | GoRemoveTags and GoAddTags | vim-go |
 | `<Leader>m` | GoMetaLinter | vim-go |
+| `<Leader>;` | Open Ack | ack.vim |
 
 ### Plugin: nerdtree
 
@@ -103,6 +94,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `?`   | Got help |
 | `<I>` | Show hidden files |
 | `<A>` | Zoom the nerdtree window |
+| `yy`  | yak full path of current node |
 
 ### Plugin: ctrlp.vim
 

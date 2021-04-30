@@ -27,7 +27,7 @@ function! NumberToggle()
     set rnu
   endif
 endfunc
-nnoremap <C-c>c :call NumberToggle()<cr>
+nnoremap M :call NumberToggle()<cr>
 
 " http://stackoverflow.com/questions/13194428/is-better-way-to-zoom-windows-in-vim-than-zoomwin
 " Zoom / Restore window.
@@ -43,12 +43,13 @@ function! s:ZoomToggle() abort
     endif
 endfunction
 command! ZoomToggle call s:ZoomToggle()
-nnoremap <silent> <C-c>z :ZoomToggle<CR>
+nnoremap <silent> Z :ZoomToggle<CR>
 
 " Cursor
 "set cul                      " cursorline
 "set cuc                      " cursorcolumn
 
+" The screen is not cleared when your exit
 " set t_ti= t_te=
 
 " Turn backup off
@@ -66,7 +67,7 @@ autocmd FileType go,make set noet | set nolist
 autocmd FileType go,make,proto,markdown set ts=4 | set sw=4
 
 " Leave the cursor at center of window
-nnoremap n nzz
+nmap n nzz
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
 map <C-o> <C-o>zz
@@ -79,7 +80,6 @@ map <C-l> <C-W>l
 
 " New tab
 nmap <C-t> :tabnew<CR>
-nmap <C-c>n :tabnext<cr>
 
 " Select, Copy and Paste, gvim is needed.
 map <C-a> <Esc>ggvG$
@@ -89,9 +89,6 @@ imap <C-v> <Esc>"+p
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
 
-" remap U to <C-r> for easier redo
-nnoremap U <C-r>
-
 " Highlight TODO, DONE, BUG, etc.
 if has("autocmd")
   if v:version > 701
@@ -100,13 +97,10 @@ if has("autocmd")
 endif
 
 " Use tab to indent
-nmap <tab> V>
-nmap <s-tab> V<
+nmap <tab> v>
+nmap <s-tab> v<
 vmap <tab> >gv
 vmap <s-tab> <gv
-
-" Convenient ESC
-inoremap jj <Esc>
 
 " Autocompletion
 "inoremap .<tab> .<C-x><C-o>
@@ -115,6 +109,8 @@ inoremap jj <Esc>
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :FloatermKill<CR>:q<CR>
+
+nnoremap <leader>z :read ! git log -3 --pretty=\%B<CR>
 
 " turn to next or previous errors, after open location list
 nmap <leader>j :lnext<CR>
@@ -151,7 +147,6 @@ Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux pan
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
 Plugin 'fatih/vim-go'                     " Go development plugin for Vim
 Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
-Plugin 'severin-lemaignan/vim-minimap'    " A Sublime-like minimap for VIM
 Plugin 'Shougo/vimproc.vim'               " Interactive command execution in Vim
 Plugin 'Shougo/vimshell.vim'              " Powerful shell implemented by vim
 Plugin 'sebdah/vim-delve'                 " Vim integration for Delve
@@ -225,13 +220,12 @@ let g:multi_cursor_quit_key='<Esc>'
 " Configuration: mileszs/ack.vim
 " Just like |:Ack| but instead of the |quickfix| list,
 " matches are placed in the current |location-list|.
-nnoremap <C-c><C-c> :LAck!<Space>
+nnoremap <Leader>; :LAck!<Space>
 
 " =========================================================
 " Configuration: vim-go
 " commands
 au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>t <Plug>(go-alternate-edit)
 au FileType go nmap <leader>s <Plug>(go-callees)
 au FileType go nmap <leader>d <Plug>(go-def)
 au FileType go nmap <leader>f <Plug>(go-referrers)
@@ -242,7 +236,7 @@ au FileType go nmap <leader>o :GoDecls<cr>
 au FileType go nmap <leader>p :GoDeclsDir<cr>
 au FileType go nmap <leader>v :GoFillStruct<cr>
 au FileType go nmap <leader>e :GoDiagnostics!<cr>
-au FileType go nmap <leader>n :GoRemoveTags<CR>:GoAddTags toml<CR>
+au FileType go nmap <leader>n :GoRemoveTags<CR>:GoAddTags json<CR>
 
 " disable <C-t> https://github.com/fatih/vim-go/issues/1202
 let g:go_def_mapping_enabled = 0
@@ -324,14 +318,6 @@ let g:tagbar_type_markdown = {
 \ }
 
 " =========================================================
-" Configuration: severin-lemaignan/vim-minimap
-let g:minimap_toggle='<C-c>mm'
-" prevent the default bindings
-let g:minimap_show='<Nop>'
-let g:minimap_update='<Nop>'
-let g:minimap_close='<Nop>'
-
-" =========================================================
 " Configuration: Shougo/vimshell.vim
 " disable some default keys
 autocmd FileType vimshell call s:on_vimshell()
@@ -343,10 +329,10 @@ endfunction
 
 " =========================================================
 " Configuration: sebdah/vim-delve
-nmap <C-c>db :DlvToggleBreakpoint<cr>
-nmap <C-c>dc :DlvClearAll<cr>
-nmap <C-c>dt :DlvTest<cr>
-nmap <C-c>dd :DlvDebug --<space>
+nmap <Leader>tb :DlvToggleBreakpoint<cr>
+nmap <Leader>tc :DlvClearAll<cr>
+nmap <Leader>tt :DlvTest<cr>
+nmap <Leader>tr :DlvDebug --<space>
 
 " =========================================================
 " Configuration: tpope/vim-fugitive
@@ -359,6 +345,7 @@ let g:airline_theme='term'
 " =========================================================
 " Configuration: dhruvasagar/vim-table-mode
 let g:table_mode_corner='|'
+let g:table_mode_disable_tableize_mappings = 1
 
 " =========================================================
 " Configuration: suan/vim-instant-markdown
@@ -373,6 +360,8 @@ au FileType markdown nmap <leader>o :GenTocGFM<cr>
 " Configuration: hotoo/pangu.vim
 au FileType markdown nmap <leader>y :Pangu<cr>
 
+" =========================================================
 " Configuration floaterm
 nnoremap <C-q> :silent! FloatermToggle<CR>
 tnoremap <C-q> <C-\><C-n>:FloatermToggle<CR>
+
