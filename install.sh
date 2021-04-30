@@ -19,7 +19,6 @@ fi
 # Copy dotfiles
 dotfiles=(
   .vimrc
-  .eslintrc.js
 )
 for i in ${dotfiles[@]}; do curl -L $repo/$i > $HOME/$i; done
 
@@ -37,12 +36,10 @@ fi
 snippets=(
   snippets/_.snippets
   snippets/go.snippets
-  snippets/javascript.snippets
 )
 for i in ${snippets[@]}; do curl -L $repo/$i > $bundle/snipmate.vim/$i; done
 curl -L $repo/plugins/yank_mapping.vim > $bundle/nerdtree/nerdtree_plugin/yank_mapping.vim
 
 # install npm dependencies
-command -v eslint >/dev/null 2>&1 || npm install -g eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
 command -v instant-markdown-d >/dev/null 2>&1 || npm install -g https://github.com/mwnf/instant-markdown-d.git
 
