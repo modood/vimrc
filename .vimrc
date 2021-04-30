@@ -56,10 +56,6 @@ set nobk                      " nobackup
 set nowb                      " nowritebackup
 set noswf                     " noswapfile
 
-" Statusline
-set ls=2                      " laststatus
-set stl=%F%m%r%h%w\ \[%v,%l]\ \[%p%%]\%{strftime(\"\ %Y-%m-%d\ %H:%M\")}  "statusline
-
 " Filetype
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost * if &filetype == "" | setlocal filetype=text | endif
