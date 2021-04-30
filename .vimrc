@@ -51,24 +51,6 @@ nnoremap <silent> <C-c>z :ZoomToggle<CR>
 
 " set t_ti= t_te=
 
-" Folding
-" type: manual, indent, expr, syntax, diff, marker
-set foldenable
-set foldmethod=indent
-set foldlevel=99
-nmap <C-c>fc za<cr>
-nmap <C-c>ff :call ToggleFold()<cr>
-let g:FoldMethod = 0
-fun! ToggleFold()
-    if g:FoldMethod == 0
-        exe "normal! zM"
-        let g:FoldMethod = 1
-    else
-        exe "normal! zR"
-        let g:FoldMethod = 0
-    endif
-endfun
-
 " Turn backup off
 set nobk                      " nobackup
 set nowb                      " nowritebackup

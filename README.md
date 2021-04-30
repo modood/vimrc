@@ -55,8 +55,6 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<C-c><C-c>` | Open Ack | ack.vim |
 | `<C-c>c` | toggle rnu or nornu | - |
 | `<C-c>z` | toggle zoom or restore window | - |
-| `<C-c>ff` | toggle close or open all fold | - |
-| `<C-c>fc` | toggle close or open a fold | - |
 | `<C-c>db` | toggle (add or remove) a breakpoint | vim-delve |
 | `<C-c>dc` | clear all the breakpoints and tracepoints | vim-delve |
 | `<C-c>dt` | debug non-main packages | vim-delve |
