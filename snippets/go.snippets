@@ -1,7 +1,11 @@
-snippet func
+snippet f
 	// $1 ${2:...}
 	func ${1:FuncName}(${3}) {
 		${4}
+	}
+snippet ft
+	func Test${1:FuncName}(t *testing.T) {
+		${2}
 	}
 snippet ife
 	if err != nil {
@@ -15,10 +19,19 @@ snippet jsonm
 	}
 	${5}
 snippet jsonu
-	if err ${1::}= ${2:json}.Unmarshal(${3:object}, ${4:bytes}); err != nil {
+	if err ${1::}= ${2:json}.Unmarshal(${3:bytes}, ${4:object}); err != nil {
 		${5:return err}
 	}
 	${6}
+snippet itoa
+	${1:str} := strconv.Itoa(${2:int(number)})
+	${3}
+snippet atoi
+	${1:integer}, err := strconv.Atoi(${2:str})
+	if err != nil {
+		${3:return err}
+	}
+	${4}
 snippet makem
 	${1:variable} := make(map[${2:string}]${3:string}, ${4:0})
 	${5}
@@ -28,6 +41,9 @@ snippet makec
 snippet timef
 	${1:variable} := ${2:time.Now()}.Format(${3:time.RFC3339})
 	${4}
+snippet now
+	${1:now} := time.Now().Unix()
+	${2}
 snippet range
 	for ${1:_}, ${2:v} := range ${3:object} {
 		${4:fmt.Println(v)}
@@ -35,6 +51,14 @@ snippet range
 	${5}
 snippet r
 	return ${1:nil}
+	${2}
+snippet pkg
+	package ${1:main}
+	${2}
+snippet imp
+	import (
+		"${1:fmt}"
+	)
 	${2}
 snippet p
 	fmt.Println(${1:v})
@@ -44,4 +68,18 @@ snippet go
 		${1}
 	}()
 	${2}
+snippet mux
+	mux sync.${1:RW}Mutex
+snippet 200
+	http.StatusOK
+snippet 400
+	http.StatusBadRequest
+snippet 401
+	http.StatusUnauthorized
+snippet 403
+	http.StatusForbidden
+snippet 404
+	http.StatusNotFound
+snippet 500
+	http.StatusInternalServerError
 
