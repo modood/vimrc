@@ -62,7 +62,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost * if &filetype == "" | setlocal filetype=text | endif
 
 " Set tabstop shiftwidth expandtab listchars
-autocmd FileType * set ts=2 | set sw=2 | set et | set lcs=tab:▒░ | set list
+autocmd FileType * set ts=2 | set sw=2 | set et | set lcs=tab:▒░ | set list | call s:UpdateReadingMode()
 autocmd FileType go,make set noet | set nolist
 autocmd FileType go,make,proto,markdown set ts=4 | set sw=4
 
@@ -124,6 +124,27 @@ nmap <leader>= :vertical resize +2<CR>
 
 " reset all error checking: Stop the highlighting, close locationlist
 noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>
+
+" reading mode
+function! s:UpdateReadingMode()
+    if exists('t:reading') && t:reading
+        set nolist
+        ShowTrailingWhitespaceOff
+    else
+        set list
+        ShowTrailingWhitespaceOn
+    endif
+endfunc
+function! s:ToggleReadingMode()
+    if exists('t:reading') && t:reading
+        let t:reading = 0
+    else
+        let t:reading = 1
+    endif
+    call s:UpdateReadingMode()
+endfunc
+command! ToggleReadingMode call s:ToggleReadingMode()
+noremap <space><space><space><space> :ToggleReadingMode<CR>
 
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
@@ -215,6 +236,11 @@ let g:multi_cursor_next_key='<C-g>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_prev_key='<C-e>'
 let g:multi_cursor_quit_key='<Esc>'
+
+" =========================================================
+" Configuration: vim-scripts/ShowTrailingWhitespace
+command! -bar ShowTrailingWhitespaceOn  call ShowTrailingWhitespace#Set(1,1)
+command! -bar ShowTrailingWhitespaceOff call ShowTrailingWhitespace#Set(0,1)
 
 " =========================================================
 " Configuration: mileszs/ack.vim

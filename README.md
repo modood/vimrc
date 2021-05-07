@@ -15,6 +15,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<esc><esc><esc><esc>` | reset all error checking: <br/>1.  stop the highlighting<br/>2.  close locationlist<br/>3.  reset syntastic | - |
+| `<space><space><space><space>` | toggle reading mode | - |
 | `:w!!` | sudo & write a file | - |
 | `<v>` | expand region expand | vim-expand-region |
 | `<s>` | s{char} to move to {char} | vim-easymotion |
