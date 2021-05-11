@@ -129,10 +129,8 @@ noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>
 function! s:UpdateReadingMode()
     if exists('t:reading') && t:reading
         set nolist
-        ShowTrailingWhitespaceOff
     else
         set list
-        ShowTrailingWhitespaceOn
     endif
 endfunc
 function! s:ToggleReadingMode()
@@ -154,11 +152,9 @@ Plugin 'VundleVim/Vundle.vim'             " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'              " A tree explorer plugin for vim.
 Plugin 'msanders/snipmate.vim'            " implements some of TextMate's snippets features in Vim.
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file, buffer, mru, tag, etc finder.
-Plugin 'Shougo/neocomplcache.vim'         " Ultimate auto-completion system for Vim.
 Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
 Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'mzlogin/vim-markdown-toc'         " Generate table of contents for Markdown files
-Plugin 'tpope/vim-markdown'               " Vim Markdown runtime files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
 Plugin 'scrooloose/nerdcommenter'         " Vim plugin for intensely orgasmic commenting
@@ -178,7 +174,6 @@ Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table cre
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 Plugin 'voldikss/vim-floaterm'            " Terminal manager for (neo)vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
-Plugin 'fidian/hexmode'                   " Vim plugin to edit binary files in a hex mode automatically.
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -206,15 +201,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|node_modules|logs)$',
   \ 'file': '\v\.(log|swp|zip|png|jpg|ico)$',
   \ }
-
-" =========================================================
-" Configuration: neocomplcache.vim
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
 
 " =========================================================
 " Configuration: terryma/vim-expand-region
