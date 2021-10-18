@@ -174,6 +174,7 @@ Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table cre
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 Plugin 'voldikss/vim-floaterm'            " Terminal manager for (neo)vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
+Plugin 'ivalkeen/vim-ctrlp-tjump'         " CtrlP extension for fuzzy-search in tag matches (:tjump replacement).
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -376,4 +377,12 @@ au FileType markdown nmap <leader>y :Pangu<cr>
 " Configuration floaterm
 nnoremap <C-q> :silent! FloatermToggle<CR>
 tnoremap <C-q> <C-\><C-n>:FloatermToggle<CR>
+
+" =========================================================
+" Configuration ivalkeen/vim-ctrlp-tjump
+" python jump to definition
+command! Stjump execute 'stjump' expand('<cword>')
+au FileType python nmap <leader>m :!ctags --languages=Python -R -f ./tags $(pipenv --venv) .<CR>
+au FileType python nmap <leader>s :Stjump<CR>
+au FileType python nmap <leader>d :CtrlPtjump<CR>
 
