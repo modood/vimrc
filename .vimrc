@@ -103,7 +103,10 @@ vmap <tab> >gv
 vmap <s-tab> <gv
 
 " Autocompletion
-"inoremap .<tab> .<C-x><C-o>
+set sb " splitbelow
+set cot+=menuone,noselect,noinsert " completeopt
+autocmd FileType go inoremap <tab> <C-x><C-o>
+autocmd CompleteDone * pclose
 
 " Leader
 let mapleader = "\<Space>"
