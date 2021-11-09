@@ -104,9 +104,9 @@ vmap <s-tab> <gv
 
 " Autocompletion
 set sb " splitbelow
-set cot+=menuone,noselect,noinsert " completeopt
-autocmd FileType go inoremap <tab> <C-x><C-o>
-autocmd CompleteDone * pclose
+set cot+=popuphidden " completeopt
+autocmd FileType go inoremap <expr> <tab> pumvisible() ? '<C-n>' : '<C-x><C-o>'
+autocmd FileType go inoremap <expr> <s-tab> pumvisible() ? '<C-p>' : '<C-x><C-o>'
 
 " Leader
 let mapleader = "\<Space>"
