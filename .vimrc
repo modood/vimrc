@@ -352,7 +352,7 @@ nmap <Leader>tr :DlvDebug --<space>
 
 " =========================================================
 " Configuration: tpope/vim-fugitive
-nmap <leader>b :Gblame<CR>
+nmap <leader>b :Git blame<CR>
 
 " =========================================================
 " Configuration: vim-airline/vim-airline-themes
