@@ -9,7 +9,7 @@
 bundle=$HOME/.vim/bundle
 vundle=$bundle/Vundle.vim
 
-repo=https://github.com/modood/vimrc/raw/master
+repo=https://github.com/rjomulus/vimrc/raw/master
 
 # Download "VundleVim/Vundle.vim" Vim Plugin Manager
 if [ ! -d $vundle ]; then
