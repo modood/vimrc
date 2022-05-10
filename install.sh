@@ -43,3 +43,19 @@ curl -L $repo/plugins/yank_mapping.vim > $bundle/nerdtree/nerdtree_plugin/yank_m
 # install npm dependencies
 command -v instant-markdown-d >/dev/null 2>&1 || npm install -g https://github.com/mwnf/instant-markdown-d.git
 
+# Setup neovim (builds from source, works with macOS -- tested on 11.4 (20F71)
+echo "Setting up neovim!"
+
+#Prereqs.. assumes xcode-select is done or full xcode install done
+brew install ninja libtool automake cmake pkg-config gettext curl
+mkdir -p ~/Documents/dev
+cd ~/Documents/dev
+git clone https://github.com/neovim/neovim
+cd neovim && make
+sudo make install
+rm -rf ~/Documents/dev/neovim
+
+# Setup neovim to share vim config
+mkdir -p ~/.config/nvim
+echo -e "set runtimepath^=~/.vim runtimepath+=~/.vim/after\nlet &packpath=&runtimepath\nsource ~/.vimrc" > ~/.config/nvim/init.vim
+

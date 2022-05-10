@@ -107,7 +107,7 @@ vmap <s-tab> <gv
 
 " Autocompletion
 set sb " splitbelow
-set cot+=popuphidden " completeopt
+set cot=longest,menuone " completeopt
 autocmd FileType go inoremap <expr> <tab> pumvisible() ? '<C-n>' : '<C-x><C-o>'
 autocmd FileType go inoremap <expr> <s-tab> pumvisible() ? '<C-p>' : '<C-x><C-o>'
 
