@@ -1,6 +1,9 @@
 syntax on                     " syntax highlighing
 filetype plugin indent on     " required
 
+" Python only
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
+
 " Basic configuration
 " set acd                     " autochdir
 set nocp                      " nocompatible
@@ -176,8 +179,9 @@ Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airli
 Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 Plugin 'voldikss/vim-floaterm'            " Terminal manager for (neo)vim
-Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
 Plugin 'ivalkeen/vim-ctrlp-tjump'         " CtrlP extension for fuzzy-search in tag matches (:tjump replacement).
+Plugin 'pangloss/vim-javascript'          " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+Plugin 'vim-python/python-syntax'         " Python syntax highlighting
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
