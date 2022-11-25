@@ -5,7 +5,7 @@ A shell script to deploy my vim configuration
 The installation will overwrite your `.vimrc` file, be sure to backup your existing vim configuration.
 
 ```
-curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
+curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 ```
 
 ## keyboard shortcuts overview
@@ -46,7 +46,7 @@ curl -L https://github.com/modood/vimrc/raw/master/install.sh | bash
 | `<C-x>` | Cursor skip | vim-multiple-cursors |
 | `<C-c>` | [V] Copy selected text | gvim |
 | `<C-v>` | [N] Switch to [VB] mode<br/>[I] Paste | -<br/>gvim |
-| `<C-b>` | Toggle tagbar | tagbar |
+| `<C-b>` | [N] Toggle tagbar <br/>[I] Autocompletion | tagbar<br/>- |
 | `<C-n>` | Toggle Terdtree | nerdtree |
 | `<C-m>` | `<cr>` | **do not edit** |
 | `<C-;>` | Show clipboard | Ubuntu |

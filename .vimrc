@@ -105,15 +105,14 @@ vmap <s-tab> <gv
 " Autocompletion
 set sb " splitbelow
 set cot+=popuphidden " completeopt
-autocmd FileType go inoremap <expr> <tab> pumvisible() ? '<C-n>' : '<C-x><C-o>'
-autocmd FileType go inoremap <expr> <s-tab> pumvisible() ? '<C-p>' : '<C-x><C-o>'
+autocmd FileType go inoremap <expr> <c-b> pumvisible() ? '<C-n>' : '<C-x><C-o>'
 
 " Leader
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :FloatermKill<CR>:q<CR>
 
-nnoremap <leader>z :read ! git log -3 --pretty=\%B<CR>
+nnoremap <leader>z :read ! git log -8 --pretty=\%B<CR>
 
 " turn to next or previous errors, after open location list
 nmap <leader>j :lnext<CR>
@@ -374,7 +373,7 @@ au FileType markdown nmap <leader>o :GenTocGFM<cr>
 
 " =========================================================
 " Configuration: hotoo/pangu.vim
-au FileType markdown nmap <leader>y :Pangu<cr>
+au FileType markdown,text nmap <leader>y :PanguAll<cr>
 
 " =========================================================
 " Configuration floaterm
