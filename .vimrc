@@ -96,6 +96,12 @@ if has("autocmd")
   endif
 endif
 
+" Highlight
+hi Search       cterm=reverse ctermfg=yellow ctermbg=black
+hi Visual       cterm=reverse ctermfg=white ctermbg=black
+hi CursorLine   cterm=reverse
+hi QuickFixLine cterm=reverse
+
 " Use tab to indent
 nmap <tab> v>
 nmap <s-tab> v<
