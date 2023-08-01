@@ -64,7 +64,7 @@ autocmd BufNewFile,BufReadPost * if &filetype == "" | setlocal filetype=text | e
 " Set tabstop shiftwidth expandtab listchars
 autocmd FileType * set ts=2 | set sw=2 | set et | set lcs=tab:▒░ | set list | call s:UpdateReadingMode()
 autocmd FileType go,make set noet | set nolist
-autocmd FileType go,make,proto,markdown set ts=4 | set sw=4
+autocmd FileType go,make,proto,markdown set ts=4 | set sw=4 | :syntax sync fromstart
 
 " Leave the cursor at center of window
 nmap n nzz
@@ -99,7 +99,6 @@ endif
 " Highlight
 hi Search       cterm=reverse ctermfg=yellow ctermbg=black
 hi Visual       cterm=reverse ctermfg=white ctermbg=black
-hi CursorLine   cterm=reverse
 hi QuickFixLine cterm=reverse
 
 " Use tab to indent
@@ -372,6 +371,7 @@ let g:table_mode_disable_tableize_mappings = 1
 " Configuration: suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 au FileType markdown nmap <leader>p :InstantMarkdownPreview<cr>
+let g:instant_markdown_mermaid = 1
 
 " =========================================================
 " Configuration: mzlogin/vim-markdown-toc
@@ -385,6 +385,8 @@ au FileType markdown,text nmap <leader>y :PanguAll<cr>
 " Configuration floaterm
 nnoremap <C-q> :silent! FloatermToggle<CR>
 tnoremap <C-q> <C-\><C-n>:FloatermToggle<CR>
+let g:floaterm_width = 0.99
+let g:floaterm_height = 1.00
 
 " =========================================================
 " Configuration ivalkeen/vim-ctrlp-tjump
