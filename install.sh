@@ -41,5 +41,5 @@ for i in ${snippets[@]}; do curl -L $repo/$i > $bundle/snipmate.vim/$i; done
 curl -L $repo/plugins/yank_mapping.vim > $bundle/nerdtree/nerdtree_plugin/yank_mapping.vim
 
 # install npm dependencies
-command -v instant-markdown-d >/dev/null 2>&1 || npm install -g https://github.com/mwnf/instant-markdown-d.git
+command -v instant-markdown-d >/dev/null 2>&1 || npm install -g instant-markdown-d
 
