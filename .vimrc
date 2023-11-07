@@ -12,7 +12,7 @@ set enc=utf-8                 " encoding
 set fencs=utf-8,gbk,gb2312,gb18030    " fileencodings
 set pt=<F3>                   " pastetoggle
 set mouse=a                   " mouse
-set ff=dos                    " fileformat
+set ff=unix                   " fileformat
 set mmp=10240                 " maxmempattern
 
 " Number
@@ -182,6 +182,7 @@ Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings 
 Plugin 'voldikss/vim-floaterm'            " Terminal manager for (neo)vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
 Plugin 'ivalkeen/vim-ctrlp-tjump'         " CtrlP extension for fuzzy-search in tag matches (:tjump replacement).
+Plugin 'github/copilot.vim'               " Neovim plugin for GitHub Copilot
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -396,3 +397,11 @@ au FileType python nmap <leader>m :!ctags --languages=Python -R -f ./tags $(pipe
 au FileType python nmap <leader>s :Stjump<CR>
 au FileType python nmap <leader>d :CtrlPtjump<CR>
 
+" =========================================================
+" Configuration github/copilot.vim
+let g:copilot_filetypes = {
+      \ '*': v:false,
+      \ 'markdown': v:true,
+      \ 'go': v:true,
+      \ 'gitcommit': v:true,
+      \ }

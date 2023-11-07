@@ -95,6 +95,11 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | `?`   | Got help |
 | `<I>` | Show hidden files |
 | `<A>` | Zoom the nerdtree window |
+| `<s>` | Open selected file in a new vsplit |
+| `<s>` | Open selected file in a new vsplit |
+| `<i>` | Open selected file in a split window |
+| `<O>` | Recursively open the selected directory |
+| `<X>` | Recursively close all children of the current node |
 | `yy`  | yak full path of current node |
 
 ### Plugin: ctrlp.vim
