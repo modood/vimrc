@@ -281,6 +281,9 @@ let g:go_metalinter_enabled = ['unconvert', 'megacheck', 'structcheck', 'gas', '
 " Sets go_guru_scope to the entire workspace
 let g:go_guru_scope = []
 
+hi goDiagnosticError cterm=reverse ctermfg=Red
+hi goDiagnosticWarning cterm=reverse ctermfg=Brown
+
 " [quickfix vs location list](https://github.com/fatih/vim-go/issues/696)
 let g:go_list_type = 'locationlist'
 " syntax-highlighting for Functions, Methods and Structs
