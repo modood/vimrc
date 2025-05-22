@@ -20,7 +20,11 @@ fi
 dotfiles=(
   .vimrc
 )
-for i in ${dotfiles[@]}; do curl -L $repo/$i > $HOME/$i; done
+if [[ -L "$0" ]]; then
+  for i in ${dotfiles[@]}; do cp $i $HOME/$i; done
+else
+  for i in ${dotfiles[@]}; do curl -L $repo/$i > $HOME/$i; done
+fi
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
 vim +PluginInstall +PluginUpdate +GoInstallBinaries +GoUpdateBinaries +qall < /dev/tty
@@ -37,8 +41,13 @@ snippets=(
   snippets/_.snippets
   snippets/go.snippets
 )
-for i in ${snippets[@]}; do curl -L $repo/$i > $bundle/snipmate.vim/$i; done
-curl -L $repo/plugins/yank_mapping.vim > $bundle/nerdtree/nerdtree_plugin/yank_mapping.vim
+if [[ -L "$0" ]]; then
+  for i in ${snippets[@]}; do cp $i $bundle/snipmate.vim/$i; done
+  cp plugins/yank_mapping.vim $bundle/nerdtree/nerdtree_plugin/yank_mapping.vim
+else
+  for i in ${snippets[@]}; do curl -L $repo/$i > $bundle/snipmate.vim/$i; done
+  curl -L $repo/plugins/yank_mapping.vim > $bundle/nerdtree/nerdtree_plugin/yank_mapping.vim
+fi
 
 # install npm dependencies
 command -v instant-markdown-d >/dev/null 2>&1 || npm install -g instant-markdown-d
