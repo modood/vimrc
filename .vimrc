@@ -115,7 +115,7 @@ autocmd FileType go inoremap <expr> <c-b> pumvisible() ? '<C-n>' : '<C-x><C-o>'
 " Leader
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
-nnoremap <leader>q :FloatermKill<CR>:q<CR>
+nnoremap <leader>q :silent! FloatermKill<CR>:q<CR>
 
 nnoremap <leader>z :read ! git log -8 --pretty=\%B<CR>
 
