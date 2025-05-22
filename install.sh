@@ -23,7 +23,7 @@ dotfiles=(
 for i in ${dotfiles[@]}; do curl -L $repo/$i > $HOME/$i; done
 
 # PluginInstall: "VundleVim/Vundle.vim" plugin's install command.
-vim +PluginInstall +GoInstallBinaries +qall < /dev/tty
+vim +PluginInstall +PluginUpdate +GoInstallBinaries +GoUpdateBinaries +qall < /dev/tty
 
 # Compile "Shougo/vimproc.vim" manually
 if [ ! -f $bundle/vimproc.vim/lib/*.so ]; then
