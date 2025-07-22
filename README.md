@@ -15,18 +15,15 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<esc><esc><esc><esc>` | reset all error checking: <br/>1.  stop the highlighting<br/>2.  close locationlist<br/>3.  reset syntastic | - |
-| `<space><space><space><space>` | toggle reading mode | - |
 | `:w!!` | sudo & write a file | - |
 | `<v>` | expand region expand | vim-expand-region |
 | `<s>` | s{char} to move to {char} | vim-easymotion |
 | `<Z>` | toggle zoom or restore window | - |
-| `<M>` | toggle rnu or nornu | - |
 
 ### Ctrl
 
 | key | description | plugin |
 |:----|:------------|:-------|
-| `<C-q>` | Open or hide the floaterm window | vim-floaterm |
 | `<C-w>hjkl` | moves between Vim viewports | - |
 | `<C-e>` | Scroll window [count] lines downwards<br/>Cursor previous | -<br/>vim-multiple-cursors |
 | `<C-r>` | Redo changes | - |
@@ -80,8 +77,6 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | `<Leader>z`  | read git commit message | - |
 | `<Leader>x`  | - | - |
 | `<Leader>n` | GoRemoveTags and GoAddTags | vim-go |
-| `[count]<leader>c<space>` | Toggles the comment state | nerdcommenter |
-| `[count]<leader>cs` | Comments out the selected lines | nerdcommenter |
 | `<Leader>v`  | GoFillStruct | vim-go |
 | `<Leader>b`  | Git blame | vim-fugitive |
 | `<Leader>n` | GoRemoveTags and GoAddTags | vim-go |

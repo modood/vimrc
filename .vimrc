@@ -20,14 +20,6 @@ set nu                        " number
 set rnu                       " relativenumber
 autocmd InsertEnter * :set nornu
 autocmd InsertLeave * :set rnu
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-  else
-    set rnu
-  endif
-endfunc
-nnoremap M :call NumberToggle()<cr>
 
 " http://stackoverflow.com/questions/13194428/is-better-way-to-zoom-windows-in-vim-than-zoomwin
 " Zoom / Restore window.
@@ -45,13 +37,6 @@ endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> Z :ZoomToggle<CR>
 
-" Cursor
-"set cul                      " cursorline
-"set cuc                      " cursorcolumn
-
-" The screen is not cleared when your exit
-" set t_ti= t_te=
-
 " Turn backup off
 set nobk                      " nobackup
 set nowb                      " nowritebackup
@@ -62,7 +47,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost * if &filetype == "" | setlocal filetype=text | endif
 
 " Set tabstop shiftwidth expandtab listchars
-autocmd FileType * set ts=2 | set sw=2 | set et | set lcs=tab:▒░ | set list | call s:UpdateReadingMode()
+autocmd FileType * set ts=2 | set sw=2 | set et | set lcs=tab:▒░ | set list
 autocmd FileType go,make set noet | set nolist
 autocmd FileType go,make,proto,markdown set ts=4 | set sw=4 | :syntax sync fromstart
 
@@ -90,11 +75,7 @@ imap <C-v> <Esc>"+p
 cmap w!! w !sudo tee >/dev/null %
 
 " Highlight TODO, DONE, BUG, etc.
-if has("autocmd")
-  if v:version > 701
-    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|DONE\|BUG\)')
-  endif
-endif
+autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|DONE\|BUG\)')
 
 " Highlight
 hi Search       cterm=reverse ctermfg=yellow ctermbg=black
@@ -115,7 +96,7 @@ autocmd FileType go inoremap <expr> <c-b> pumvisible() ? '<C-n>' : '<C-x><C-o>'
 " Leader
 let mapleader = "\<Space>"
 nnoremap <leader>w :w<CR>
-nnoremap <leader>q :silent! FloatermKill<CR>:q<CR>
+nnoremap <leader>q :q<CR>
 
 nnoremap <leader>z :read ! git log -8 --pretty=\%B<CR>
 
@@ -132,25 +113,6 @@ nmap <leader>= :vertical resize +2<CR>
 " reset all error checking: Stop the highlighting, close locationlist
 noremap <esc><esc><esc><esc> :nohl<cr>:lclose<cr>
 
-" reading mode
-function! s:UpdateReadingMode()
-    if exists('t:reading') && t:reading
-        set nolist
-    else
-        set list
-    endif
-endfunc
-function! s:ToggleReadingMode()
-    if exists('t:reading') && t:reading
-        let t:reading = 0
-    else
-        let t:reading = 1
-    endif
-    call s:UpdateReadingMode()
-endfunc
-command! ToggleReadingMode call s:ToggleReadingMode()
-noremap <space><space><space><space> :ToggleReadingMode<CR>
-
 " =========================================================
 set rtp+=~/.vim/bundle/Vundle.vim         " set the runtime path to include Vundle and initialize
 call vundle#begin('~/.vim/bundle')        " Specify a directory for plugins: begin('~/some/path/here')
@@ -164,7 +126,6 @@ Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'mzlogin/vim-markdown-toc'         " Generate table of contents for Markdown files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
-Plugin 'scrooloose/nerdcommenter'         " Vim plugin for intensely orgasmic commenting
 Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
 Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the end of lines.
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
@@ -179,9 +140,7 @@ Plugin 'vim-airline/vim-airline'          " lean & mean status/tabline for vim t
 Plugin 'vim-airline/vim-airline-themes'   " A collection of themes for vim-airline
 Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table creation
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
-Plugin 'voldikss/vim-floaterm'            " Terminal manager for (neo)vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
-Plugin 'ivalkeen/vim-ctrlp-tjump'         " CtrlP extension for fuzzy-search in tag matches (:tjump replacement).
 Plugin 'github/copilot.vim'               " Neovim plugin for GitHub Copilot
 
 call vundle#end()                         " All of your Plugins must be added before this line
@@ -384,21 +343,6 @@ au FileType markdown nmap <leader>o :GenTocGFM<cr>
 " =========================================================
 " Configuration: hotoo/pangu.vim
 au FileType markdown,text nmap <leader>y :PanguAll<cr>
-
-" =========================================================
-" Configuration floaterm
-nnoremap <C-q> :silent! FloatermToggle<CR>
-tnoremap <C-q> <C-\><C-n>:FloatermToggle<CR>
-let g:floaterm_width = 0.99
-let g:floaterm_height = 1.00
-
-" =========================================================
-" Configuration ivalkeen/vim-ctrlp-tjump
-" python jump to definition
-command! Stjump execute 'stjump' expand('<cword>')
-au FileType python nmap <leader>m :!ctags --languages=Python -R -f ./tags $(pipenv --venv) .<CR>
-au FileType python nmap <leader>s :Stjump<CR>
-au FileType python nmap <leader>d :CtrlPtjump<CR>
 
 " =========================================================
 " Configuration github/copilot.vim
