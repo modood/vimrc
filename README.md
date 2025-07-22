@@ -25,7 +25,7 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | key | description | plugin |
 |:----|:------------|:-------|
 | `<C-w>hjkl` | moves between Vim viewports | - |
-| `<C-e>` | Scroll window [count] lines downwards<br/>Cursor previous | -<br/>vim-multiple-cursors |
+| `<C-e>` | Scroll window [count] lines downwards<br/>Cursor previous | -<br/>vim-visual-multi |
 | `<C-r>` | Redo changes | - |
 | `<C-t>` | New tab | - |
 | `<C-y>` | Scroll window [count] lines upwards | - |
@@ -37,10 +37,10 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | `<C-s>` | Tmux prefix key | tmux |
 | `<C-d>` | Scroll window Downwards | - |
 | `<C-f>` | Find the current file in the tree | nerdtree |
-| `<C-g>` | Cursor next | vim-multiple-cursors |
+| `<C-g>` | Cursor next | vim-visual-multi |
 | `<C-hjkl>` | moves between Vim viewports | vim and tmux |
 | `<C-z>` | Suspend | - |
-| `<C-x>` | Cursor skip | vim-multiple-cursors |
+| `<C-x>` | Cursor skip | vim-visual-multi |
 | `<C-c>` | [V] Copy selected text | gvim |
 | `<C-v>` | [N] Switch to [VB] mode<br/>[I] Paste | -<br/>gvim |
 | `<C-b>` | [N] Toggle tagbar <br/>[I] Autocompletion | tagbar<br/>- |

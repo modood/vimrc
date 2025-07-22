@@ -126,7 +126,7 @@ Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
 Plugin 'mzlogin/vim-markdown-toc'         " Generate table of contents for Markdown files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
-Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
+Plugin 'mg979/vim-visual-multi'           " Multiple cursors plugin for vim/neovim
 Plugin 'vim-scripts/ShowTrailingWhitespace' " Detect unwanted whitespace at the end of lines.
 Plugin 'christoomey/vim-tmux-navigator'   " Seamless navigation between tmux panes and vim splits
 Plugin 'mileszs/ack.vim'                  " Vim plugin for the Perl module / CLI script 'ack'
@@ -182,14 +182,16 @@ map  s <Plug>(easymotion-bd-f)
 nmap s <Plug>(easymotion-overwin-f)
 
 " =========================================================
-" Configuration: terryma/vim-multiple-cursors
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_exit_from_insert_mode=1
-let g:multi_cursor_exit_from_visual_mode=1
-let g:multi_cursor_next_key='<C-g>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_prev_key='<C-e>'
-let g:multi_cursor_quit_key='<Esc>'
+" Configuration: mg979/vim-visual-multi
+let g:VM_theme = 'purplegray'
+let g:VM_quit_after_leaving_insert_mode = 1
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-g>'
+let g:VM_maps['Find Subword Under'] = '<C-g>'
+let g:VM_maps['Skip Region'] = '<C-x>'
+let g:VM_maps['Remove Region'] = '<C-e>'
+let g:VM_maps['Exit'] = '<Esc><Esc><Esc><Esc>'
+let g:VM_silent_exit = 1
 
 " =========================================================
 " Configuration: vim-scripts/ShowTrailingWhitespace
