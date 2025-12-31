@@ -122,7 +122,7 @@ Plugin 'scrooloose/nerdtree'              " A tree explorer plugin for vim.
 Plugin 'msanders/snipmate.vim'            " implements some of TextMate's snippets features in Vim.
 Plugin 'ctrlpvim/ctrlp.vim'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'mhinz/vim-signify'                " Show a diff via Vim sign column.
-Plugin 'suan/vim-instant-markdown'        " Instant Markdown previews from VIm!
+Plugin 'instant-markdown/vim-instant-markdown' " Instant Markdown previews from VIm!
 Plugin 'mzlogin/vim-markdown-toc'         " Generate table of contents for Markdown files
 Plugin 'terryma/vim-expand-region'        " Select increasingly larger regions of text
 Plugin 'easymotion/vim-easymotion'        " Vim motions on speed
@@ -142,6 +142,7 @@ Plugin 'dhruvasagar/vim-table-mode'       " VIM Table Mode for instant table cre
 Plugin 'rhysd/clever-f.vim'               " Extended f, F, t and T key mappings for Vim
 Plugin 'hotoo/pangu.vim'                  " Chinese copywriting guidelines for better written communication
 Plugin 'github/copilot.vim'               " Neovim plugin for GitHub Copilot
+Plugin 'madox2/vim-ai'                    " AI-powered code assistant for Vim
 
 call vundle#end()                         " All of your Plugins must be added before this line
 
@@ -345,6 +346,13 @@ au FileType markdown nmap <leader>o :GenTocGFM<cr>
 " =========================================================
 " Configuration: hotoo/pangu.vim
 au FileType markdown,text nmap <leader>y :PanguAll<cr>
+
+" =========================================================
+" Configuration madox2/vim-ai
+let g:vim_ai_token_file_path = '~/.config/vim-ai/ai.token'
+let g:vim_ai_roles_config_file = '~/.config/vim-ai/roles.ini'
+vmap ? :AIChat /wtf<cr>
+nmap <leader>a :AIChat<cr>
 
 " =========================================================
 " Configuration github/copilot.vim
