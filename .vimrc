@@ -354,6 +354,84 @@ let g:vim_ai_roles_config_file = '~/.config/vim-ai/roles.ini'
 vmap ? :AIChat /wtf<cr>
 nmap <leader>a :AIChat<cr>
 
+function! s:get_go_context_with_hole(before, after) abort
+  let lnum = line('.')
+
+  let before_lines = getline(max([1, lnum - a:before]), lnum - 1)
+  let after_lines  = getline(lnum, min([line('$'), lnum + a:after]))
+
+  return {
+  \ 'before': join(before_lines, "\n"),
+  \ 'after':  join(after_lines, "\n")
+  \ }
+endfunction
+
+function! s:go_hole_prompt(ctx, intent) abort
+  let extra = empty(a:intent)
+        \ ? ''
+        \ : "\nAdditional intent:\n" . a:intent . "\n"
+
+  return join([
+  \ 'You are a Go code completion engine.',
+  \ '',
+  \ 'Rules:',
+  \ '- You MUST fill in the missing code at <CURSOR>.',
+  \ '- DO NOT repeat, remove, or modify any existing code.',
+  \ '- The code before and after <CURSOR> must remain unchanged.',
+  \ '- Output ONLY the code that belongs at <CURSOR> and DO NOT wrap it in markdown code block.',
+  \ '- Keep it short and idiomatic Go.',
+  \ '',
+  \ extra,
+  \ 'Code:',
+  \ '```go',
+  \ a:ctx.before,
+  \ '<CURSOR>',
+  \ a:ctx.after,
+  \ '```',
+  \ '',
+  \ 'Fill in the code at <CURSOR>.'
+  \ ], "\n")
+endfunction
+
+function! s:run_ai_completion(prompt) abort
+  let curbuf = bufnr('%')
+
+  execute 'AI ' . shellescape(a:prompt)
+
+  let max_tries = 20
+  let interval = 100
+
+  for _ in range(max_tries)
+    for buf in getbufinfo()
+      if buf.name =~# 'AI'
+        let lines = getbufline(buf.bufnr, 1, '$')
+        execute 'buffer ' . curbuf
+        return join(lines, "\n")
+      endif
+    endfor
+
+    execute 'sleep ' . interval . 'm'
+  endfor
+
+  return ''
+endfunction
+
+function! s:go_ai_complete(intent) abort
+  let ctx = s:get_go_context_with_hole(30, 10)
+  let prompt = s:go_hole_prompt(ctx, a:intent)
+  let result = s:run_ai_completion(prompt)
+
+  if empty(result)
+    echo "AI returned nothing"
+    return
+  endif
+
+  call append(line('.') - 1, split(result, "\n"))
+endfunction
+
+command! -nargs=* AIGoComplete call s:go_ai_complete(<q-args>)
+imap <Leader>s <esc>:AIGoComplete
+
 " =========================================================
 " Configuration github/copilot.vim
 let g:copilot_filetypes = {
