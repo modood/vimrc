@@ -19,7 +19,6 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | `<v>` | expand region expand | vim-expand-region |
 | `<s>` | s{char} to move to {char} | vim-easymotion |
 | `<Z>` | toggle zoom or restore window | - |
-| `<?>` | [V]Explain the selected code | vim-ai |
 
 ### Ctrl
 
@@ -67,8 +66,7 @@ curl -L https://raw.githubusercontent.com/modood/vimrc/master/install.sh | bash
 | `<Leader>i` | implementing an interface | vim-go |
 | `<Leader>o` | Show declarations for the current file<br/>Generate table of contents for markdown | vim-go<br/>vim-markdown-toc |
 | `<Leader>p` | Show declarations for the current directory<br/>markdown preview | vim-go<br/>vim-instant-markdown |
-| `<Leader>a` | continue or start a new conversation | vim-ai |
-| `<Leader>s` | [I] run go ai complete<br/>[N] Show the call targets for the type under the cursor | vim-ai<br/>vim-go |
+| `<Leader>s` | Show the call targets for the type under the cursor | vim-go |
 | `<Leader>d` | Go to symbol/declaration | vim-go |
 | `<Leader>f` | Shows identifiers that refer to the same object | vim-go |
 | `<Leader>g` | A list of interfaces for the type that implements | vim-go |
